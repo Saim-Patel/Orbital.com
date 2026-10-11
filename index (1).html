@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbital — Hidden World: underrated places, local food &amp; budget trips</title>
+<meta name="description" content="Orbital by Saim Patel. Discover underrated destinations by budget, hidden gems, local food and local tips. Plan trips, take the quiz and share your own hidden gems.">
+<meta name="author" content="Saim Patel">
+<meta name="theme-color" content="#050505">
+<meta property="og:title" content="Orbital — Hidden World">
+<meta property="og:description" content="Discover underrated places by budget, with hidden gems, local food and local tips.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDZiNmQ0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMwNTA1MDUiLz48ZWxsaXBzZSBjeD0iMzIiIGN5PSIzMiIgcng9IjIyIiByeT0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2cpIiBzdHJva2Utd2lkdGg9IjQiIHRyYW5zZm9ybT0icm90YXRlKC0yMCAzMiAzMikiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSI4IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ORBITAL — Hidden World. Owned by Saim Patel.
+   Visual style inspired by the free Tooplate "Orbital" template (void + neon). */
+
+:root {
+  --void: #050505;
+  --violet: #8b5cf6;
+  --cyan: #06b6d4;
+  --white: #ffffff;
+  --dim: rgba(255, 255, 255, 0.62);
+  --faint: rgba(255, 255, 255, 0.4);
+  --line: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.04);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ring-radius: 360px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { overflow-x: hidden; scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  background: var(--void);
+  color: var(--white);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body.no-scroll { overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--cyan); color: #000; padding: 8px 14px; border-radius: 8px; z-index: 200; }
+.skip:focus { left: 8px; }
+
+.aura {
+  position: fixed; inset: -25%;
+  background: radial-gradient(circle at 50% 44%, rgba(58, 28, 92, 0.6), rgba(24, 12, 46, 0.22) 34%, transparent 64%);
+  z-index: 0; pointer-events: none;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+.stars {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,.7), transparent),
+    radial-gradient(1px 1px at 78% 14%, rgba(255,255,255,.5), transparent),
+    radial-gradient(1px 1px at 34% 68%, rgba(139,92,246,.6), transparent),
+    radial-gradient(1px 1px at 64% 82%, rgba(6,182,212,.5), transparent),
+    radial-gradient(1px 1px at 88% 54%, rgba(255,255,255,.4), transparent),
+    radial-gradient(1px 1px at 22% 88%, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 50% 32%, rgba(255,255,255,.3), transparent);
+}
+@keyframes drift { from { transform: translate3d(-2%,-1%,0) scale(1); } to { transform: translate3d(2%,3%,0) scale(1.14); } }
+
+.progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 60; background: linear-gradient(to right, var(--violet), var(--cyan)); box-shadow: 0 0 10px var(--cyan); }
+
+/* Navigation */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px clamp(20px, 5vw, 64px);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  background: linear-gradient(to bottom, rgba(5,5,5,.7), transparent);
+}
+.logo { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 3px; color: var(--white); }
+.logo span { color: var(--cyan); }
+.nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
+.nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; color: var(--faint); text-transform: uppercase; transition: color .5s var(--ease), text-shadow .5s var(--ease); position: relative; }
+.nav-links a::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--cyan); position: absolute; left: -12px; top: 50%; transform: translateY(-50%) scale(0); transition: transform .5s var(--ease); box-shadow: 0 0 8px var(--cyan); }
+.nav-links a:hover, .nav-links a.active { color: var(--white); text-shadow: 0 0 14px rgba(6,182,212,.7); }
+.nav-links a:hover::before, .nav-links a.active::before { transform: translateY(-50%) scale(1); }
+.count { display: inline-block; min-width: 18px; padding: 1px 5px; margin-left: 4px; font-size: 10px; text-align: center; border-radius: 10px; background: linear-gradient(to right, var(--violet), var(--cyan)); color: #fff; letter-spacing: 0; }
+.nav-actions { display: flex; align-items: center; gap: 8px; }
+.icon-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--glass); cursor: pointer; font-size: 20px; line-height: 1; transition: border-color .4s, box-shadow .4s; }
+.icon-btn:hover { border-color: var(--cyan); box-shadow: 0 0 16px rgba(6,182,212,.4); }
+.menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.menu-toggle span { width: 24px; height: 2px; background: var(--white); transition: transform .4s var(--ease), opacity .4s var(--ease); }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu { position: fixed; inset: 0; z-index: 49; background: rgba(5,5,5,.96); backdrop-filter: blur(16px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 80px 24px; overflow-y: auto; opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility .5s var(--ease); }
+.mobile-menu.open { opacity: 1; visibility: visible; }
+.mobile-menu a { font-family: 'JetBrains Mono', monospace; font-size: 20px; letter-spacing: 3px; color: var(--dim); text-transform: uppercase; }
+.mobile-menu a:hover { color: var(--cyan); }
+
+/* Hero */
+.hero { position: relative; z-index: 2; height: 100vh; min-height: 700px; overflow-x: clip; display: flex; align-items: center; justify-content: center; }
+.stage { position: absolute; inset: 0; padding-top: 24vh; display: flex; align-items: center; justify-content: center; perspective: 1300px; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.stage.dragging, .stage.dragging .panel { cursor: grabbing; }
+.parallax { position: relative; width: 1px; height: 1px; transform-style: preserve-3d; transition: transform .6s var(--ease); }
+.hero-text { position: absolute; top: clamp(84px, 13vh, 140px); left: 50%; transform: translateX(-50%); z-index: 4; text-align: center; width: 90vw; max-width: 760px; pointer-events: none; }
+.hero-text .btn { pointer-events: auto; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: clamp(10px, 1.4vw, 13px); letter-spacing: 6px; color: var(--cyan); text-shadow: 0 0 16px rgba(6,182,212,.6); margin-bottom: 14px; }
+.hero-text h1 { font-size: clamp(2.8rem, 9vw, 6rem); font-weight: 700; line-height: .94; letter-spacing: -.03em; text-shadow: 0 0 38px rgba(255,255,255,.28), 0 0 80px rgba(139,92,246,.32); }
+.hero-text p { margin: 16px auto 0; text-shadow: 0 2px 14px rgba(0,0,0,.9); font-size: clamp(.92rem, 2vw, 1.08rem); color: var(--dim); max-width: 460px; }
+.hero-cta { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.ring-tilt { position: absolute; top: 0; left: 0; transform-style: preserve-3d; transform: rotateX(var(--tiltX, -20deg)) scale3d(var(--zoom,1), var(--zoom,1), var(--zoom,1)); transition: transform .8s var(--ease); }
+.ring { position: absolute; top: 0; left: 0; transform-style: preserve-3d; will-change: transform; }
+.panel { position: absolute; top: 0; left: 0; width: 158px; height: 210px; margin-left: -79px; margin-top: -105px; border-radius: 18px; background: rgba(255,255,255,.035); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(8px); box-shadow: inset 0 0 34px rgba(139,92,246,.16), 0 0 42px rgba(6,182,212,.1); transform: rotateY(var(--ry)) translateZ(var(--tz)) rotateZ(var(--rz)) scale(var(--s,1)); transition: transform .7s var(--ease), box-shadow .7s var(--ease); cursor: pointer; border: 0; text-align: left; }
+.panel::after { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(to bottom right, rgba(139,92,246,.5), rgba(6,182,212,.2)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; transition: background .7s var(--ease); pointer-events: none; }
+.panel:hover, .panel:focus-visible { --s: 1.1; box-shadow: inset 0 0 44px rgba(139,92,246,.3), 0 0 60px rgba(6,182,212,.4); outline: none; }
+.panel:hover::after { background: linear-gradient(to bottom right, rgba(139,92,246,.95), rgba(6,182,212,.7)); }
+.p-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--cyan); }
+.p-label { font-size: 14px; font-weight: 600; letter-spacing: .5px; }
+.p-meta { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--faint); margin-top: 3px; }
+.panel-face { position: absolute; inset: 0; border-radius: inherit; transition: opacity .8s var(--ease); transition-delay: calc(var(--i,0) * .045s); }
+.panel-face--text { padding: 18px; display: flex; flex-direction: column; justify-content: space-between; opacity: 1; }
+.panel-face--image { overflow: hidden; opacity: 0; background: linear-gradient(140deg, #1a1030, #0a1f26); }
+.panel-face--image svg { width: 100%; height: 100%; transform: scale(1.08); transition: transform 1.3s var(--ease); }
+.panel-scrim { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,.92), rgba(5,5,5,.08) 56%), linear-gradient(140deg, rgba(139,92,246,.35), rgba(6,182,212,.22)); transition: opacity .6s var(--ease); }
+.panel:hover .panel-scrim { opacity: 0; }
+.panel-cap { position: absolute; bottom: 14px; left: 14px; right: 14px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; font-weight: 600; text-shadow: 0 2px 12px rgba(0,0,0,.95); }
+.panel-cap small { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.75); font-weight: 400; }
+.visuals-on .panel-face--text { opacity: 0; }
+.visuals-on .panel-face--image { opacity: 1; }
+.visuals-on .panel-face--image svg { transform: scale(1); }
+
+.hero-controls { position: absolute; right: clamp(18px,4vw,44px); bottom: clamp(80px,12vh,110px); z-index: 5; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.ctrl { display: flex; align-items: center; gap: 10px; }
+.ctrl-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--faint); }
+.switch { position: relative; width: 44px; height: 24px; border-radius: 24px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); cursor: pointer; padding: 0; transition: background .6s var(--ease), border-color .6s var(--ease), box-shadow .6s var(--ease); }
+.switch .knob { position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--dim); transition: transform .6s var(--ease), background .6s var(--ease), box-shadow .6s var(--ease); }
+.switch[aria-checked="true"] { background: linear-gradient(to right, var(--violet), var(--cyan)); border-color: rgba(6,182,212,.8); box-shadow: 0 0 20px rgba(6,182,212,.5); }
+.switch[aria-checked="true"] .knob { transform: translateX(20px); background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.9); }
+.spacing { display: flex; gap: 3px; padding: 3px; border-radius: 24px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); }
+.spacing-step { width: 26px; height: 22px; display: flex; align-items: center; justify-content: center; background: none; border: none; border-radius: 18px; cursor: pointer; transition: background .5s var(--ease); }
+.spacing-step i { display: block; border-radius: 50%; background: var(--faint); transition: background .5s, box-shadow .5s; }
+.spacing-step:nth-child(1) i { width: 5px; height: 5px; }
+.spacing-step:nth-child(2) i { width: 8px; height: 8px; }
+.spacing-step:nth-child(3) i { width: 11px; height: 11px; }
+.spacing-step.is-active { background: rgba(6,182,212,.14); }
+.spacing-step.is-active i { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.scroll-cue { position: absolute; bottom: 30px; left: clamp(18px, 4vw, 44px); z-index: 3; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--faint); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.scroll-cue .line { width: 1px; height: 38px; background: linear-gradient(var(--cyan), transparent); animation: pulse-line 2.4s ease-in-out infinite; }
+@keyframes pulse-line { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
+
+/* Buttons */
+.btn { display: inline-block; position: relative; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 3px; padding: 17px 38px; border-radius: 50px; color: #fff; background: rgba(255,255,255,.04); border: 1px solid transparent; background-clip: padding-box; cursor: pointer; transition: transform .6s var(--ease), box-shadow .6s var(--ease); overflow: hidden; }
+.btn::after { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(to right, var(--violet), var(--cyan)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 0 40px rgba(139,92,246,.5), 0 0 18px rgba(6,182,212,.4); }
+.btn-ghost { background: transparent; color: var(--dim); }
+.btn-sm { font-size: 11px; letter-spacing: 2px; padding: 11px 20px; }
+.link-btn { background: none; border: none; color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+
+/* Stats strip */
+.stats-strip { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1000px; margin: 0 auto; padding: 0 clamp(20px,6vw,60px); gap: 12px; text-align: center; }
+.stats-strip > div { padding: 22px 8px; border-radius: 14px; border: 1px solid var(--line); background: var(--glass); }
+.stats-strip b { display: block; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; background: linear-gradient(to right, var(--violet), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stats-strip span { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--faint); text-transform: uppercase; }
+
+/* Sections */
+.section { position: relative; z-index: 2; padding: clamp(80px, 12vh, 140px) clamp(20px, 6vw, 90px) clamp(40px, 6vh, 70px); max-width: 1240px; margin: 0 auto; }
+.section-head { margin-bottom: 44px; max-width: 680px; }
+.section-head .eyebrow { text-align: left; margin-bottom: 18px; }
+.section-head h2 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.04; letter-spacing: -.02em; text-shadow: 0 0 30px rgba(255,255,255,.16); }
+.section-head p { margin-top: 18px; color: var(--dim); font-size: 1.02rem; line-height: 1.6; }
+
+.panel-box { border-radius: 18px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: clamp(18px, 3vw, 32px); }
+
+/* Forms */
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+label, .field > label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; color: var(--faint); text-transform: uppercase; }
+label b { color: var(--cyan); }
+input, select, textarea { width: 100%; font: inherit; font-size: 15px; color: #fff; background: rgba(255,255,255,.05); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; transition: border-color .3s, box-shadow .3s; }
+input::placeholder, textarea::placeholder { color: var(--faint); }
+select option { background: #111; color: #fff; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(6,182,212,.18); }
+input[type=range] { padding: 0; height: 28px; background: none; border: 0; accent-color: var(--cyan); }
+input[type=checkbox] { width: auto; accent-color: var(--cyan); }
+textarea { resize: vertical; }
+small { color: var(--faint); font-size: 11px; text-align: right; }
+.range-scale { display: flex; justify-content: space-between; font-size: 11px; color: var(--faint); font-family: 'JetBrains Mono', monospace; }
+.filters { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; align-items: end; }
+.budget-field { grid-column: span 2; }
+.filters .field:last-child { grid-column: span 2; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.chip { padding: 8px 16px; border-radius: 40px; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: 13px; color: var(--dim); transition: all .35s var(--ease); }
+.chip:hover { border-color: var(--cyan); color: #fff; }
+.chip.on { background: linear-gradient(to right, rgba(139,92,246,.35), rgba(6,182,212,.3)); border-color: var(--cyan); color: #fff; box-shadow: 0 0 18px rgba(6,182,212,.25); }
+.filter-foot { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.check { display: flex; align-items: center; gap: 8px; text-transform: none; letter-spacing: 0; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: var(--dim); cursor: pointer; }
+.result-count { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); letter-spacing: 1px; }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; margin-top: 30px; }
+.card { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: rgba(255,255,255,.025); transition: transform .6s var(--ease), border-color .6s, box-shadow .6s; display: flex; flex-direction: column; cursor: pointer; animation: cardIn .6s var(--ease) both; }
+@keyframes cardIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.card:hover { transform: translateY(-6px); border-color: rgba(6,182,212,.6); box-shadow: 0 10px 50px rgba(6,182,212,.15); }
+.card-art { position: relative; height: 170px; overflow: hidden; }
+.card-art svg { width: 100%; height: 100%; transition: transform 1.2s var(--ease); }
+.card:hover .card-art svg { transform: scale(1.07); }
+.card-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,5,.75), transparent 60%); pointer-events: none; }
+.badge { position: absolute; left: 12px; top: 12px; z-index: 2; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; padding: 5px 10px; border-radius: 20px; background: rgba(5,5,5,.65); border: 1px solid var(--line); backdrop-filter: blur(6px); }
+.badge.gem { color: #c4b5fd; }
+.badge.season { color: #67e8f9; left: auto; right: 12px; top: auto; bottom: 12px; }
+.fav { position: absolute; right: 12px; top: 12px; z-index: 3; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: rgba(5,5,5,.6); backdrop-filter: blur(6px); cursor: pointer; font-size: 18px; transition: transform .4s var(--ease), background .3s; }
+.fav:hover { transform: scale(1.12); }
+.fav.on { background: linear-gradient(135deg, var(--violet), var(--cyan)); border-color: transparent; }
+.card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--violet); text-transform: uppercase; }
+.card h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -.01em; }
+.card p { color: var(--dim); font-size: .92rem; line-height: 1.5; }
+.card-foot { margin-top: auto; padding-top: 12px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); font-size: 13px; }
+.price { font-weight: 600; color: #fff; }
+.price small { color: var(--faint); font-weight: 400; }
+.stars-row { color: #fbbf24; letter-spacing: 2px; font-size: 12px; }
+.empty { padding: 60px 20px; text-align: center; color: var(--dim); border: 1px dashed var(--line); border-radius: 16px; margin-top: 30px; }
+.match { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--cyan); }
+
+/* Quiz */
+.quiz { min-height: 280px; }
+.q-step { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--violet); margin-bottom: 10px; }
+.q-title { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 600; margin-bottom: 22px; }
+.q-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.q-opt { padding: 18px; text-align: left; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.03); cursor: pointer; font-size: 15px; transition: all .4s var(--ease); }
+.q-opt:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 0 24px rgba(6,182,212,.18); }
+.q-opt span { display: block; font-size: 24px; margin-bottom: 8px; }
+.q-bar { height: 3px; background: var(--line); border-radius: 3px; margin-bottom: 24px; overflow: hidden; }
+.q-bar i { display: block; height: 100%; background: linear-gradient(to right, var(--violet), var(--cyan)); transition: width .5s var(--ease); }
+.q-results { display: grid; gap: 12px; margin: 18px 0; }
+.q-res { display: flex; align-items: center; gap: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.03); cursor: pointer; text-align: left; transition: border-color .3s, transform .4s var(--ease); }
+.q-res:hover { border-color: var(--cyan); transform: translateX(4px); }
+.q-res .thumb { width: 64px; height: 64px; border-radius: 12px; overflow: hidden; flex: none; }
+.q-res b { display: block; font-size: 1.05rem; }
+.q-res em { font-style: normal; color: var(--dim); font-size: .88rem; }
+.q-res .pct { margin-left: auto; font-family: 'JetBrains Mono', monospace; color: var(--cyan); }
+
+/* Food */
+.food-tools { display: flex; gap: 12px; margin-bottom: 26px; flex-wrap: wrap; }
+.food-tools input { flex: 1 1 260px; }
+.food-tools select { flex: 0 0 200px; }
+.food-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.dish { padding: 20px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255,255,255,.03); cursor: pointer; text-align: left; position: relative; overflow: hidden; transition: transform .5s var(--ease), border-color .4s; }
+.dish::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--dc, var(--cyan)); box-shadow: 0 0 14px var(--dc, var(--cyan)); }
+.dish:hover { transform: translateY(-5px); border-color: rgba(6,182,212,.5); }
+.dish .where { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--violet); text-transform: uppercase; }
+.dish h4 { font-size: 1.15rem; margin: 8px 0 6px; font-weight: 600; }
+.dish p { color: var(--dim); font-size: .88rem; line-height: 1.5; }
+.dish .dp { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); }
+
+/* Planner */
+.planner-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.planner-list { display: grid; gap: 10px; }
+.pl-row { display: grid; grid-template-columns: 56px 1fr auto auto; gap: 14px; align-items: center; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.03); }
+.pl-row .thumb { width: 56px; height: 56px; border-radius: 10px; overflow: hidden; }
+.pl-row b { display: block; cursor: pointer; }
+.pl-row b:hover { color: var(--cyan); }
+.pl-row small { text-align: left; display: block; margin-top: 2px; }
+.pl-cost { font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 14px; }
+.rm { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: none; cursor: pointer; font-size: 16px; }
+.rm:hover { border-color: #f87171; color: #f87171; }
+.planner-total { margin: 22px 0; padding: 18px 20px; border-radius: 14px; background: linear-gradient(135deg, rgba(139,92,246,.18), rgba(6,182,212,.14)); border: 1px solid rgba(6,182,212,.35); display: flex; flex-wrap: wrap; gap: 8px 30px; align-items: baseline; justify-content: space-between; }
+.planner-total b { font-size: 1.8rem; }
+.planner-total span { color: var(--dim); font-size: .9rem; }
+.planner-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.pl-empty { padding: 30px; text-align: center; color: var(--dim); border: 1px dashed var(--line); border-radius: 14px; }
+
+/* Community */
+.community-grid { display: grid; grid-template-columns: minmax(280px, 400px) 1fr; gap: 24px; align-items: start; }
+#gemForm { display: grid; gap: 16px; }
+.form-msg { min-height: 18px; font-size: 13px; color: #f87171; }
+.form-msg.ok { color: #4ade80; }
+.stars-input { display: flex; gap: 4px; }
+.stars-input button { background: none; border: 0; cursor: pointer; font-size: 26px; color: rgba(255,255,255,.25); transition: color .2s, transform .2s; line-height: 1; }
+.stars-input button.on { color: #fbbf24; }
+.stars-input button:hover { transform: scale(1.2); }
+.community-tools { display: flex; gap: 10px; margin-bottom: 14px; align-items: center; flex-wrap: wrap; }
+.community-tools select { width: auto; flex: 1 1 150px; padding: 10px 12px; font-size: 14px; }
+.c-item { padding: 18px 20px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.03); margin-bottom: 12px; animation: cardIn .5s var(--ease) both; }
+.c-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--violet); }
+.c-top .tag { padding: 3px 9px; border: 1px solid var(--line); border-radius: 20px; color: var(--cyan); }
+.c-item h4 { margin: 10px 0 6px; font-size: 1.1rem; font-weight: 600; }
+.c-item p { color: var(--dim); line-height: 1.55; font-size: .93rem; white-space: pre-wrap; word-break: break-word; }
+.c-foot { display: flex; gap: 14px; align-items: center; margin-top: 12px; font-size: 12px; color: var(--faint); }
+.vote { background: none; border: 1px solid var(--line); border-radius: 20px; padding: 5px 12px; cursor: pointer; font-size: 12px; transition: all .3s; }
+.vote:hover, .vote.on { border-color: var(--cyan); color: var(--cyan); }
+.c-del { margin-left: auto; background: none; border: 0; cursor: pointer; color: var(--faint); font-size: 12px; text-decoration: underline; }
+.c-del:hover { color: #f87171; }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.feature { position: relative; padding: 38px 28px 32px; border-radius: 16px; background: rgba(255,255,255,.025); border: 1px solid rgba(255,255,255,.06); backdrop-filter: blur(8px); overflow: hidden; transition: transform .7s var(--ease), background .7s var(--ease); }
+.feature::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--cyan); box-shadow: 0 0 18px var(--cyan); animation: pulse-top 3.2s ease-in-out infinite; }
+.feature:nth-child(2)::before { animation-delay: 1s; }
+.feature:nth-child(3)::before { animation-delay: 2s; }
+@keyframes pulse-top { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+.feature:hover { transform: translateY(-6px); background: rgba(255,255,255,.05); }
+.f-index { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; color: var(--violet); margin-bottom: 20px; }
+.feature h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 12px; }
+.feature p { color: var(--dim); font-size: .94rem; line-height: 1.62; }
+
+.cta { position: relative; z-index: 2; text-align: center; padding: clamp(90px,14vh,160px) 24px; }
+.cta h2 { font-size: clamp(2.2rem, 7vw, 4.6rem); font-weight: 700; letter-spacing: -.03em; line-height: 1; text-shadow: 0 0 40px rgba(139,92,246,.4); }
+.cta p { margin: 22px auto 38px; max-width: 460px; color: var(--dim); }
+
+.footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padding: 40px clamp(20px, 6vw, 64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer .credit { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; color: var(--faint); line-height: 1.8; text-align: right; }
+.footer .credit b { color: var(--dim); font-weight: 500; }
+.footer .credit a { color: var(--dim); }
+.footer .credit a:hover { color: var(--cyan); }
+
+.reveal { opacity: 0; transform: translateY(34px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Modal */
+.modal, .search-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(3,3,8,.8); backdrop-filter: blur(8px); animation: fade .3s both; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.modal-card { position: relative; width: min(900px, 100%); max-height: 92vh; overflow-y: auto; border-radius: 22px; border: 1px solid rgba(139,92,246,.4); background: #0a0a12; box-shadow: 0 0 80px rgba(139,92,246,.25); animation: pop .5s var(--ease) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(30px) scale(.97); } to { opacity: 1; transform: none; } }
+.modal-close { position: absolute; right: 14px; top: 14px; z-index: 5; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: rgba(5,5,5,.7); cursor: pointer; font-size: 24px; line-height: 1; }
+.modal-close:hover { border-color: var(--cyan); }
+.modal-art { height: 220px; overflow: hidden; position: relative; }
+.modal-art svg { width: 100%; height: 100%; }
+.modal-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, #0a0a12, transparent 70%); }
+.modal-body { padding: 0 clamp(18px, 4vw, 38px) 34px; margin-top: -40px; position: relative; z-index: 2; }
+.modal-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
+.modal-top .eyebrow { margin-bottom: 10px; font-size: 11px; letter-spacing: 4px; }
+.modal-top h3 { font-size: clamp(1.8rem, 5vw, 2.8rem); letter-spacing: -.02em; line-height: 1.05; }
+.modal-tag { color: var(--dim); margin-top: 8px; }
+.modal-btns { display: flex; gap: 8px; }
+.tabs { display: flex; gap: 4px; margin: 24px 0 18px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.tabs button { background: none; border: 0; padding: 12px 16px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint); border-bottom: 2px solid transparent; white-space: nowrap; transition: color .3s; }
+.tabs button:hover { color: #fff; }
+.tabs button.on { color: var(--cyan); border-color: var(--cyan); }
+.tab-body { min-height: 180px; }
+.tab-body p { color: var(--dim); line-height: 1.7; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 18px; }
+.kv div { padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.03); }
+.kv small { display: block; text-align: left; font-family: 'JetBrains Mono', monospace; letter-spacing: 1.5px; text-transform: uppercase; font-size: 10px; margin-bottom: 4px; }
+.kv b { font-size: 1.05rem; }
+.months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-top: 8px; }
+.months span { text-align: center; font-size: 10px; padding: 8px 0; border-radius: 6px; background: rgba(255,255,255,.04); color: var(--faint); font-family: 'JetBrains Mono', monospace; }
+.months span.ok { background: rgba(6,182,212,.22); color: #67e8f9; }
+.months span.now { outline: 1px solid #fff; }
+.list { display: grid; gap: 10px; }
+.list li { list-style: none; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.03); line-height: 1.55; color: var(--dim); }
+.list li b { color: #fff; display: block; margin-bottom: 2px; }
+.list li em { font-style: normal; font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 12px; }
+.list.tips li::before { content: '→ '; color: var(--cyan); }
+.cost-calc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.cost-bar { display: flex; height: 10px; border-radius: 10px; overflow: hidden; margin: 12px 0 8px; }
+.cost-bar i { display: block; }
+.maplink { display: inline-block; margin-top: 16px; color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 1px; text-decoration: underline; text-underline-offset: 4px; }
+
+/* Search overlay */
+.search-overlay { align-items: flex-start; padding-top: 12vh; }
+.search-box { position: relative; width: min(640px, 100%); border-radius: 18px; border: 1px solid rgba(139,92,246,.45); background: #0a0a12; box-shadow: 0 0 80px rgba(139,92,246,.3); padding: 14px; animation: pop .4s var(--ease) both; }
+.search-box input { font-size: 18px; padding: 16px 18px; }
+.g-results { max-height: 50vh; overflow-y: auto; margin-top: 10px; display: grid; gap: 4px; }
+.g-res { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 10px; cursor: pointer; background: none; border: 0; text-align: left; width: 100%; }
+.g-res:hover, .g-res:focus-visible { background: rgba(6,182,212,.12); }
+.g-res .thumb { width: 42px; height: 42px; border-radius: 8px; overflow: hidden; flex: none; }
+.g-res small { display: block; text-align: left; }
+.g-res b { font-weight: 600; }
+.hint { padding: 10px 6px 2px; font-size: 12px; color: var(--faint); }
+kbd { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 1px 6px; border: 1px solid var(--line); border-radius: 5px; }
+
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 30px); z-index: 300; padding: 12px 22px; border-radius: 40px; background: rgba(15,15,25,.95); border: 1px solid var(--cyan); box-shadow: 0 0 30px rgba(6,182,212,.35); font-size: 14px; opacity: 0; pointer-events: none; transition: all .5s var(--ease); max-width: 90vw; text-align: center; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .filters { grid-template-columns: repeat(3, 1fr); }
+  .budget-field { grid-column: span 3; }
+  .community-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) { .features { grid-template-columns: 1fr; } }
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  :root { --ring-radius: 220px; }
+  .panel { width: 124px; height: 168px; margin-left: -62px; margin-top: -84px; }
+  .ring-tilt { --tiltX: -14deg; }
+  .filters { grid-template-columns: 1fr 1fr; }
+  .budget-field { grid-column: span 2; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .scroll-cue { display: none; }
+  .hero-controls { bottom: 90px; right: 14px; transform: scale(.9); transform-origin: right bottom; }
+  .pl-row { grid-template-columns: 48px 1fr auto; }
+  .pl-row .pl-cost { grid-column: 2; }
+  .cost-calc { grid-template-columns: 1fr; }
+  .months { grid-template-columns: repeat(6, 1fr); }
+  .footer .credit { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aura, .ring, .scroll-cue .line, .feature::before { animation: none; }
+  .parallax { transition: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .card, .c-item { animation: none; }
+}
+
+@media print {
+  body { background: #fff; color: #000; }
+  body > *:not(#printArea) { display: none !important; }
+  #printArea { display: block !important; font-family: sans-serif; padding: 20px; }
+  #printArea h1 { font-size: 24px; margin-bottom: 8px; }
+  #printArea table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+  #printArea td, #printArea th { border: 1px solid #999; padding: 6px 10px; text-align: left; }
+}
+#printArea { display: none; }
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Orbital — Hidden World","author":{"@type":"Person","name":"Saim Patel"},"description":"Discover underrated places by budget, with hidden gems, local food and local tips."}
+</script>
+</head>
+<body class="visuals-on">
+
+<a class="skip" href="#explore">Skip to content</a>
+<div class="aura"></div>
+<div class="stars"></div>
+<div class="progress" id="progress"></div>
+
+<nav class="nav">
+  <a href="#top" class="logo">ORBITAL <span>// HIDDEN WORLD</span></a>
+  <ul class="nav-links">
+    <li><a href="#explore">Explore</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#food">Food</a></li>
+    <li><a href="#planner">My Orbit <b class="count" id="savedCount">0</b></a></li>
+    <li><a href="#community">Community</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Search destinations (Ctrl+K)" title="Search (Ctrl+K)">⌕</button>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#explore">Explore</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#food">Food</a>
+  <a href="#planner">My Orbit</a>
+  <a href="#community">Community</a>
+</div>
+
+<header class="hero" id="top">
+  <div class="stage">
+    <div class="parallax">
+      <div class="ring-tilt">
+        <div class="ring" id="ring"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-text">
+    <div class="eyebrow">HIDDEN WORLD</div>
+    <h1>ORBITAL</h1>
+    <p>Discover underrated places by budget. Hidden gems, local food and tips from people who live there.</p>
+    <div class="hero-cta">
+      <a href="#explore" class="btn">EXPLORE BY BUDGET</a>
+      <button class="btn btn-ghost" id="surpriseBtn" type="button">SURPRISE ME</button>
+    </div>
+  </div>
+  <div class="hero-controls">
+    <div class="ctrl">
+      <span class="ctrl-label">VISUALS</span>
+      <button class="switch" id="visualsSwitch" role="switch" aria-checked="true" aria-label="Toggle image visuals"><span class="knob"></span></button>
+    </div>
+    <div class="ctrl">
+      <span class="ctrl-label">ZOOM</span>
+      <button class="switch" id="zoomSwitch" role="switch" aria-checked="false" aria-label="Zoom ring larger"><span class="knob"></span></button>
+    </div>
+    <div class="ctrl">
+      <span class="ctrl-label">SPACING</span>
+      <div class="spacing" role="group" aria-label="Ring spacing">
+        <button class="spacing-step" data-space="0" aria-label="Tight spacing"><i></i></button>
+        <button class="spacing-step is-active" data-space="1" aria-label="Default spacing"><i></i></button>
+        <button class="spacing-step" data-space="2" aria-label="Wide spacing"><i></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><div class="line"></div></div>
+</header>
+
+<section class="stats-strip reveal" aria-label="Orbital at a glance">
+  <div><b id="statPlaces">0</b><span>Hidden places</span></div>
+  <div><b id="statGems">0</b><span>Hidden gems</span></div>
+  <div><b id="statDishes">0</b><span>Local dishes</span></div>
+  <div><b id="statCommunity">0</b><span>Community tips</span></div>
+</section>
+
+<!-- EXPLORE BY BUDGET -->
+<section class="section" id="explore">
+  <div class="section-head reveal">
+    <div class="eyebrow">// 01 EXPLORE BY BUDGET</div>
+    <h2>Where can your money go furthest?</h2>
+    <p>Set your daily budget per person, pick your style and filter by vibe, region or season. Prices are approximate and exclude travel to the destination.</p>
+  </div>
+
+  <div class="panel-box reveal">
+    <div class="filters">
+      <div class="field budget-field">
+        <label for="budgetRange">Budget per person per day: <b id="budgetVal">₹2,500</b></label>
+        <input type="range" id="budgetRange" min="800" max="6000" step="100" value="2500">
+        <div class="range-scale"><span>₹800</span><span>₹6,000</span></div>
+      </div>
+      <div class="field">
+        <label for="styleSel">Travel style</label>
+        <select id="styleSel">
+          <option value="low">Backpacker</option>
+          <option value="mid" selected>Comfortable</option>
+          <option value="high">Treat yourself</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="regionSel">Region</label>
+        <select id="regionSel">
+          <option value="all">All regions</option>
+          <option>North</option><option>South</option><option>East</option><option>West</option>
+          <option>Central</option><option>Northeast</option><option>International</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="monthSel">Travel month</label>
+        <select id="monthSel"></select>
+      </div>
+      <div class="field">
+        <label for="sortSel">Sort by</label>
+        <select id="sortSel">
+          <option value="match">Best match</option>
+          <option value="hidden">Most hidden</option>
+          <option value="cheap">Cheapest</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="searchInput">Search</label>
+        <input type="search" id="searchInput" placeholder="Place, dish or state">
+      </div>
+    </div>
+    <div class="chips" id="vibeChips" role="group" aria-label="Filter by vibe"></div>
+    <div class="filter-foot">
+      <label class="check"><input type="checkbox" id="favOnly"> Saved only</label>
+      <label class="check"><input type="checkbox" id="hiddenOnly"> Only truly hidden (4★+)</label>
+      <button class="link-btn" id="resetBtn" type="button">Reset filters</button>
+      <span class="result-count" id="resultCount" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <div class="cards" id="cards"></div>
+  <div class="empty" id="emptyState" hidden>No places match these filters. Try raising your budget or choosing another month.</div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+  <div class="section-head reveal">
+    <div class="eyebrow">// 02 FIND YOUR ORBIT</div>
+    <h2>Not sure where to go? Take the 30-second quiz.</h2>
+    <p>Answer four quick questions and Orbital will rank the places that match your mood, budget and season.</p>
+  </div>
+  <div class="panel-box quiz reveal" id="quizBox" aria-live="polite"></div>
+</section>
+
+<!-- FOOD -->
+<section class="section" id="food">
+  <div class="section-head reveal">
+    <div class="eyebrow">// 03 LOCAL FOOD</div>
+    <h2>Eat what the locals eat.</h2>
+    <p>Every destination has a dish worth the journey. Filter by region or search for a dish.</p>
+  </div>
+  <div class="food-tools reveal">
+    <input type="search" id="foodSearch" placeholder="Search dishes, e.g. fish, millet, momo" aria-label="Search dishes">
+    <select id="foodRegion" aria-label="Filter dishes by region">
+      <option value="all">All regions</option>
+      <option>North</option><option>South</option><option>East</option><option>West</option>
+      <option>Central</option><option>Northeast</option><option>International</option>
+    </select>
+  </div>
+  <div class="food-grid" id="foodGrid"></div>
+</section>
+
+<!-- PLANNER -->
+<section class="section" id="planner">
+  <div class="section-head reveal">
+    <div class="eyebrow">// 04 MY ORBIT</div>
+    <h2>Save places and plan your budget.</h2>
+    <p>Tap the heart on any place to add it here. Your list stays in your browser. Adjust trip length and group size to get a cost estimate.</p>
+  </div>
+  <div class="panel-box reveal">
+    <div class="planner-controls">
+      <div class="field"><label for="plDays">Days per place</label><input type="number" id="plDays" min="1" max="30" value="4"></div>
+      <div class="field"><label for="plPeople">Travelers</label><input type="number" id="plPeople" min="1" max="20" value="2"></div>
+      <div class="field">
+        <label for="plStyle">Style</label>
+        <select id="plStyle"><option value="low">Backpacker</option><option value="mid" selected>Comfortable</option><option value="high">Treat yourself</option></select>
+      </div>
+      <div class="field"><label for="plTravel">Travel cost per person (₹)</label><input type="number" id="plTravel" min="0" step="500" value="4000"></div>
+    </div>
+    <div id="plannerList" class="planner-list"></div>
+    <div class="planner-total" id="plannerTotal"></div>
+    <div class="planner-actions">
+      <button class="btn btn-sm" id="copyPlan" type="button">COPY PLAN</button>
+      <button class="btn btn-sm btn-ghost" id="printPlan" type="button">PRINT</button>
+      <button class="btn btn-sm btn-ghost" id="clearPlan" type="button">CLEAR</button>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section" id="community">
+  <div class="section-head reveal">
+    <div class="eyebrow">// 05 COMMUNITY</div>
+    <h2>Share a hidden gem.</h2>
+    <p>Know a place, dish or shortcut nobody talks about? Add it. Entries appear below and are saved in this browser. Upvote the ones you like.</p>
+  </div>
+  <div class="community-grid">
+    <form class="panel-box reveal" id="gemForm" novalidate>
+      <div class="field"><label for="gPlace">Place</label><input id="gPlace" list="placeList" placeholder="e.g. Chopta or any town" required maxlength="60"><datalist id="placeList"></datalist></div>
+      <div class="field"><label for="gTitle">Title</label><input id="gTitle" placeholder="Short headline" required maxlength="80"></div>
+      <div class="field">
+        <label for="gCat">Category</label>
+        <select id="gCat"><option>Hidden gem</option><option>Food</option><option>Local tip</option><option>Culture</option><option>Budget hack</option><option>Warning</option></select>
+      </div>
+      <div class="field"><label for="gNote">Details</label><textarea id="gNote" rows="4" placeholder="What makes it special? How do you reach it? Approx cost?" required maxlength="500"></textarea><small id="gCount">0 / 500</small></div>
+      <div class="field"><label for="gName">Your name (optional)</label><input id="gName" maxlength="30" placeholder="Anonymous"></div>
+      <div class="field">
+        <label>Rating</label>
+        <div class="stars-input" id="starsInput" role="radiogroup" aria-label="Rating"></div>
+      </div>
+      <p class="form-msg" id="formMsg" aria-live="polite"></p>
+      <button class="btn" type="submit">SUBMIT TO ORBITAL</button>
+    </form>
+    <div class="community-list reveal">
+      <div class="community-tools">
+        <select id="commFilter" aria-label="Filter community entries"><option value="all">All categories</option></select>
+        <select id="commSort" aria-label="Sort community entries"><option value="new">Newest</option><option value="votes">Top voted</option></select>
+        <button class="link-btn" id="exportBtn" type="button">Export JSON</button>
+      </div>
+      <div id="commList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-head reveal">
+    <div class="eyebrow">// 06 WHY ORBITAL</div>
+    <h2>Travel that rewards curiosity.</h2>
+    <p>Orbital is a hand-built travel discovery project by Saim Patel. No tracking, no sign-ups. Works offline once loaded.</p>
+  </div>
+  <div class="features">
+    <div class="feature reveal"><div class="f-index">01 // BUDGET</div><h3>Budget-first search</h3><p>Start with what you can spend and see only the places that fit, in your travel month.</p></div>
+    <div class="feature reveal"><div class="f-index">02 // LOCAL</div><h3>Local-first advice</h3><p>Hidden gems, regional dishes and respectful tips for every place, not just the Instagram spots.</p></div>
+    <div class="feature reveal"><div class="f-index">03 // YOURS</div><h3>Built with you</h3><p>Save places, plan costs and add your own discoveries for other travelers to find.</p></div>
+  </div>
+</section>
+
+<section class="cta" id="launch">
+  <div class="reveal">
+    <h2>Ready to orbit?</h2>
+    <p>The best places are rarely the loudest. Pick one and go.</p>
+    <button class="btn" id="surprise2" type="button">SURPRISE ME</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <a href="#top" class="logo">ORBITAL <span>// HIDDEN WORLD</span></a>
+  <div class="credit">
+    © <span id="year">2026</span> Orbital. Owned &amp; created by <b>Saim Patel</b>.
+    <br>Visual style inspired by the free <a href="https://www.tooplate.com/view/2167-orbital" rel="nofollow noopener" target="_blank">Tooplate Orbital</a> template.
+  </div>
+</footer>
+
+<!-- Detail modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+    <div class="modal-art" id="mArt"></div>
+    <div class="modal-body">
+      <div class="modal-top">
+        <div>
+          <div class="eyebrow" id="mMeta"></div>
+          <h3 id="mTitle"></h3>
+          <p class="modal-tag" id="mTag"></p>
+        </div>
+        <div class="modal-btns">
+          <button class="btn btn-sm" id="mSave" type="button">♡ SAVE</button>
+          <button class="btn btn-sm btn-ghost" id="mShare" type="button">SHARE</button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" id="mTabs">
+        <button role="tab" data-tab="overview" class="on">Overview</button>
+        <button role="tab" data-tab="gems">Hidden gems</button>
+        <button role="tab" data-tab="food">Local food</button>
+        <button role="tab" data-tab="tips">Local tips</button>
+        <button role="tab" data-tab="cost">Cost</button>
+        <button role="tab" data-tab="community">Community</button>
+      </div>
+      <div class="tab-body" id="mBody"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Search overlay -->
+<div class="search-overlay" id="searchOverlay" hidden>
+  <div class="modal-backdrop" data-close-search></div>
+  <div class="search-box" role="dialog" aria-label="Search">
+    <input id="gSearch" type="search" placeholder="Search places, dishes, gems, states…" autocomplete="off">
+    <div id="gResults" class="g-results"></div>
+    <div class="hint">Press <kbd>Esc</kbd> to close · <kbd>Enter</kbd> to open the first result</div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ORBITAL — destination data.
+   Budgets are approximate per-person, per-day costs in INR (stay + food + local transport),
+   excluding the journey to the place. Always double-check current prices before you travel.
+   hidden = how "undiscovered" the place feels, 1 (popular) to 5 (very few tourists). */
+
+window.ORBITAL_DATA = [
+  {
+    id: "chopta", name: "Chopta", state: "Uttarakhand", country: "India", region: "North",
+    vibes: ["mountain", "trek", "nature", "spiritual"], hidden: 4,
+    budget: { low: 1200, mid: 2200, high: 4500 }, months: [3, 4, 5, 6, 9, 10, 11],
+    tagline: "The mini Switzerland nobody queues for",
+    desc: "A quiet meadow-and-forest saddle in Rudraprayag at about 2,600 m. Base for the Tungnath temple (the world's highest Shiva temple) and the Chandrashila summit trek, with rhododendron forests that bloom in spring.",
+    colors: ["#0f3d3e", "#2dd4bf"], art: "mountain", lat: 30.4, lon: 79.0,
+    from: "Delhi → Haridwar/Rishikesh by train, then ~6–7 h by shared taxi to Ukhimath/Chopta.",
+    gems: [
+      { name: "Chandrashila sunrise", note: "Start the 1.5 km climb from Tungnath around 4 am for a sunrise over Nanda Devi, Trishul and Chaukhamba." },
+      { name: "Deoria Tal", note: "A mirror-like lake near Sari village; Chaukhamba reflects in the water on clear mornings." },
+      { name: "Ukhimath winter seat", note: "Kedarnath's idol is worshipped here in winter. Far fewer visitors than the main shrine." }
+    ],
+    food: [
+      { dish: "Aloo ke Gutke", note: "Spiced fried potatoes with jakhya tempering.", price: "₹80–120" },
+      { dish: "Kafuli with Mandua roti", note: "Spinach-based Garhwali curry with finger millet bread.", price: "₹120–180" },
+      { dish: "Jhangora kheer", note: "Barnyard millet pudding, a hill-festival classic.", price: "₹60–100" }
+    ],
+    tips: [
+      "Book a camp or homestay in Chopta/Duggalbitta; options are few in peak May–June.",
+      "Carry cash — ATMs are far and network is patchy.",
+      "Winter (Dec–Feb) brings snow but the road can close; check conditions first."
+    ]
+  },
+  {
+    id: "ziro", name: "Ziro Valley", state: "Arunachal Pradesh", country: "India", region: "Northeast",
+    vibes: ["culture", "nature", "food"], hidden: 5,
+    budget: { low: 1500, mid: 2800, high: 5500 }, months: [3, 4, 9, 10, 11],
+    tagline: "Rice-paddy plateau of the Apatani people",
+    desc: "A UNESCO-tentative-listed highland plateau where the Apatani tribe practises a sustainable rice-and-fish farming system. Pine ridges, bamboo groves and Apatani villages make it feel like another planet.",
+    colors: ["#1b4332", "#a3e635"], art: "forest", lat: 27.55, lon: 93.83,
+    from: "Fly/train to Guwahati, then Naharlagun/Itanagar and a shared Sumo to Ziro (~9–10 h). Indian citizens need an Inner Line Permit (ILP).",
+    gems: [
+      { name: "Hari & Hapoli villages", note: "Walk between paddy fields and traditional bamboo houses; ask before photographing people." },
+      { name: "Talley Valley Wildlife Sanctuary", note: "Dense subtropical forest north of Ziro with rich bird and orchid life." },
+      { name: "Meghna Cave temple", note: "A Shiva shrine inside a limestone cave, locally revered and rarely crowded." }
+    ],
+    food: [
+      { dish: "Pika Pila", note: "Fermented bamboo-shoot pickle, a staple Apatani condiment.", price: "₹40–80" },
+      { dish: "Smoked pork with bamboo shoot", note: "Slow-smoked and cooked with local herbs.", price: "₹150–250" },
+      { dish: "Apong (rice beer)", note: "Traditional fermented rice drink; try it at a homestay.", price: "₹50–100" }
+    ],
+    tips: [
+      "Apply for the ILP online in advance (arunachalilp.com).",
+      "The Ziro Festival of Music is usually held in late September — book a year ahead.",
+      "Stay with a local family; homestays fund the community directly."
+    ]
+  },
+  {
+    id: "gokarna", name: "Gokarna", state: "Karnataka", country: "India", region: "South",
+    vibes: ["beach", "spiritual", "food"], hidden: 3,
+    budget: { low: 1000, mid: 2000, high: 4200 }, months: [10, 11, 12, 1, 2, 3],
+    tagline: "Goa's calmer, wilder cousin",
+    desc: "A temple town with a string of crescent beaches reached by cliff trails. You get sunsets, seafood shacks and a laid-back crowd, without the Goa party scale.",
+    colors: ["#0c4a6e", "#fb923c"], art: "beach", lat: 14.55, lon: 74.32,
+    from: "Train to Gokarna Road station (Konkan Railway), then a short auto ride. From Delhi, Mangaluru/Goa routes work too.",
+    gems: [
+      { name: "Kudle → Om → Half Moon → Paradise trail", note: "Hike beach to beach on cliff paths; Paradise beach is the least visited." },
+      { name: "Mirjan Fort", note: "A 16th-century laterite fort near Aghanashini river, quiet and photogenic." },
+      { name: "Maha Ganapati & Mahabaleshwar temples", note: "Ancient temples in the old town; visit early morning." }
+    ],
+    food: [
+      { dish: "Fish thali", note: "Fresh kingfish or sardine fry, rice and coastal curry.", price: "₹150–300" },
+      { dish: "Neer dosa with coconut chutney", note: "Lacy rice crepes, breakfast of the coast.", price: "₹50–90" },
+      { dish: "Sol kadhi", note: "Cooling kokum-coconut drink after a spicy meal.", price: "₹30–60" }
+    ],
+    tips: [
+      "Monsoon (Jun–Sep) closes most beach shacks and boat rides.",
+      "Swim only in marked safe zones; currents can be strong.",
+      "Take reusable bottles — beach clean-up groups are active."
+    ]
+  },
+  {
+    id: "gandikota", name: "Gandikota", state: "Andhra Pradesh", country: "India", region: "South",
+    vibes: ["nature", "culture", "adventure"], hidden: 5,
+    budget: { low: 900, mid: 1800, high: 3500 }, months: [10, 11, 12, 1, 2],
+    tagline: "India's own canyon on the Pennar river",
+    desc: "A red-gorge canyon carved by the Pennar river, often nicknamed the Grand Canyon of India. The 12th-century Gandikota fort sits on the rim, and sunrise colors the gorge in layers.",
+    colors: ["#7c2d12", "#f59e0b"], art: "canyon", lat: 14.81, lon: 78.28,
+    from: "Train to Kadapa or Yerraguntla, then ~1 h by cab. Hyderabad/Bengaluru road trips are common.",
+    gems: [
+      { name: "Gorge viewpoint at sunrise", note: "Arrive before 6 am; the cliff edge glows deep orange." },
+      { name: "Madhavaraya & Ranganatha temples", note: "Chalukyan-style stonework inside the fort walls." },
+      { name: "Belum Caves (2 h drive)", note: "One of the longest cave systems on the Indian subcontinent open to the public." }
+    ],
+    food: [
+      { dish: "Ragi sangati with natu kodi curry", note: "Finger millet balls with spicy country-chicken curry.", price: "₹150–250" },
+      { dish: "Pesarattu", note: "Green gram dosa, a popular Andhra breakfast.", price: "₹40–80" },
+      { dish: "Gongura pickle with rice", note: "Tangy sorrel leaf chutney, Telugu soul food.", price: "₹60–120" }
+    ],
+    tips: [
+      "Haritha tents and small guesthouses fill up on weekends; book ahead.",
+      "Wear closed shoes for the rocky fort walk.",
+      "Summers are very hot — plan Oct–Feb."
+    ]
+  },
+  {
+    id: "majuli", name: "Majuli", state: "Assam", country: "India", region: "Northeast",
+    vibes: ["culture", "nature", "spiritual"], hidden: 4,
+    budget: { low: 1100, mid: 2200, high: 4200 }, months: [11, 12, 1, 2, 3],
+    tagline: "A living island of monasteries and masks",
+    desc: "One of the world's largest river islands, on the Brahmaputra. It is the heart of Assam's Vaishnav satra culture, with dance, mask-making and bird-rich wetlands.",
+    colors: ["#14532d", "#38bdf8"], art: "river", lat: 26.95, lon: 94.17,
+    from: "Fly to Jorhat, then a ferry from Nimati Ghat (~1.5 h) to the island.",
+    gems: [
+      { name: "Samaguri Satra mask-making", note: "Watch artisans craft bamboo-and-clay Bhaona masks used in drama performances." },
+      { name: "Auniati Satra", note: "A monastery with a museum of royal-era artifacts and daily prayers." },
+      { name: "Chitadar Chuk bird walks", note: "Winter wetlands attract migratory birds; best early morning." }
+    ],
+    food: [
+      { dish: "Masor Tenga", note: "Tangy fish curry with lemon or tomato.", price: "₹120–220" },
+      { dish: "Pitha", note: "Rice-based sweets and snacks, especially around Bihu.", price: "₹30–80" },
+      { dish: "Duck curry with ash gourd", note: "Local Mising community specialty.", price: "₹200–320" }
+    ],
+    tips: [
+      "Ferry timings are fixed; reach the ghat early and verify the last return.",
+      "Rent a cycle or scooter to explore; roads are flat and quiet.",
+      "Brahmaputra floods affect the island in monsoon (Jun–Sep)."
+    ]
+  },
+  {
+    id: "spiti", name: "Spiti Valley", state: "Himachal Pradesh", country: "India", region: "North",
+    vibes: ["mountain", "adventure", "spiritual"], hidden: 3,
+    budget: { low: 1400, mid: 2600, high: 5500 }, months: [5, 6, 7, 8, 9, 10],
+    tagline: "High-altitude cold desert and ancient gompas",
+    desc: "A remote Himalayan valley of barren peaks, turquoise rivers and 1,000-year-old monasteries. Altitudes range from 3,000 to 4,500 m, so acclimatize well.",
+    colors: ["#1e3a5f", "#e0f2fe"], art: "mountain", lat: 32.25, lon: 78.03,
+    from: "Delhi → Shimla → Kinnaur → Kaza by road (via Manali opens late May/June). Allow 2 days.",
+    gems: [
+      { name: "Langza fossil village", note: "Find marine fossils on slopes, under the Chau Chau Kang Nilda peak." },
+      { name: "Komic & Hikkim", note: "Among the world's highest villages connected by road; Hikkim has the highest post office." },
+      { name: "Dhankar Lake trek", note: "A short, steep hike above Dhankar monastery to a glacial lake." }
+    ],
+    food: [
+      { dish: "Thukpa", note: "Hearty Tibetan noodle soup.", price: "₹100–180" },
+      { dish: "Tsampa & butter tea", note: "Roasted barley flour with salty butter tea; warms you at altitude.", price: "₹40–90" },
+      { dish: "Chhurpi", note: "Hard yak/cow cheese, chewy local snack.", price: "₹30–80" }
+    ],
+    tips: [
+      "Spend your first night at moderate altitude (Kalpa/Kaza) to acclimatize.",
+      "Fuel only at Kaza and Reckong Peo — fill up before you go deeper.",
+      "Mobile network: BSNL and Jio work only in a few towns."
+    ]
+  },
+  {
+    id: "tirthan", name: "Tirthan Valley", state: "Himachal Pradesh", country: "India", region: "North",
+    vibes: ["nature", "trek", "food"], hidden: 4,
+    budget: { low: 1200, mid: 2300, high: 4800 }, months: [3, 4, 5, 6, 9, 10, 11],
+    tagline: "Trout streams at the edge of a national park",
+    desc: "A forested valley near the Great Himalayan National Park (UNESCO World Heritage). Slow-paced hamlets, apple orchards and clear streams with homestays run by locals.",
+    colors: ["#064e3b", "#86efac"], art: "forest", lat: 31.62, lon: 77.45,
+    from: "Delhi → Aut (near Mandi) by overnight bus, then a cab to Tirthan/Gushaini (~1 h).",
+    gems: [
+      { name: "Serolsar Lake trek", note: "A day hike through oak forest to a sacred lake; local homestays can guide you." },
+      { name: "Jibhi waterfall", note: "A short walk from the village, with riverside cafes and wooden temples." },
+      { name: "Chehni Kothi", note: "A towering traditional tower-temple, a few km from Banjar." }
+    ],
+    food: [
+      { dish: "Fresh trout fry", note: "Locally raised or caught in the Tirthan, lightly spiced.", price: "₹250–400" },
+      { dish: "Siddu with ghee", note: "Steamed wheat bread with walnut or poppy filling.", price: "₹60–120" },
+      { dish: "Himachali dham", note: "Traditional festival feast with rajma, madra and rice.", price: "₹150–250" }
+    ],
+    tips: [
+      "Check trout fishing permits and rules; seasons are regulated.",
+      "Book homestays directly; many are family-run with home-cooked meals.",
+      "Roads can slip during monsoon — keep flexible dates."
+    ]
+  },
+  {
+    id: "meghalaya", name: "Nongriat & Dawki", state: "Meghalaya", country: "India", region: "Northeast",
+    vibes: ["nature", "trek", "adventure"], hidden: 4,
+    budget: { low: 1300, mid: 2500, high: 5000 }, months: [10, 11, 12, 1, 2, 3, 4],
+    tagline: "Living root bridges and glass-clear rivers",
+    desc: "Deep in the East Khasi Hills, villagers have guided rubber-tree roots into bridges that grow stronger over centuries. Nearby, the Umngot river at Dawki looks like floating boats in glass.",
+    colors: ["#052e16", "#22d3ee"], art: "river", lat: 25.25, lon: 91.67,
+    from: "Fly to Guwahati or Shillong; shared taxi to Sohra (Cherrapunji). Nongriat is a ~3,000-step descent from Tyrna.",
+    gems: [
+      { name: "Double-decker root bridge", note: "The famous two-level living bridge at Nongriat; swim in the nearby Rainbow Falls pools." },
+      { name: "Mawlynnong", note: "Often cited as one of Asia's cleanest villages; stay in a tree-house homestay." },
+      { name: "Shnongpdeng kayaking", note: "Paddle the Umngot and spot the riverbed 5 m below." }
+    ],
+    food: [
+      { dish: "Jadoh", note: "Khasi rice cooked with pork or chicken.", price: "₹100–180" },
+      { dish: "Dohneiiong", note: "Pork cooked with black sesame, a Khasi specialty.", price: "₹150–250" },
+      { dish: "Tungrymbai", note: "Fermented soybean paste with pork.", price: "₹80–150" }
+    ],
+    tips: [
+      "Start the Nongriat trek early; stairs are steep and slippery after rain.",
+      "Carry cash — many villages have no card machines.",
+      "Respect Khasi customs: ask before photographing locals and keep trails clean."
+    ]
+  },
+  {
+    id: "kutch", name: "Kutch", state: "Gujarat", country: "India", region: "West",
+    vibes: ["culture", "desert", "food"], hidden: 3,
+    budget: { low: 1100, mid: 2300, high: 5500 }, months: [11, 12, 1, 2],
+    tagline: "White salt desert and 4,500-year-old cities",
+    desc: "Kutch has the Great Rann salt flats, handicraft villages and Dholavira — an Indus Valley Civilization city declared a UNESCO World Heritage Site in 2021. Winters bring the Rann Utsav tent festival.",
+    colors: ["#78350f", "#fde68a"], art: "desert", lat: 23.74, lon: 69.86,
+    from: "Train to Bhuj (Kutch Express from Mumbai/Ahmedabad) or fly to Bhuj. Local taxis to Dholavira take ~4 h.",
+    gems: [
+      { name: "Dholavira", note: "Walk through a planned Harappan city with water reservoirs and a stepped signboard." },
+      { name: "Hodka & Nirona craft villages", note: "Meet artisans of bell-metal, Rogan painting and block-print; buy directly." },
+      { name: "Kala Dungar (Black Hill)", note: "Highest point in Kutch; view the Rann stretching to the horizon." }
+    ],
+    food: [
+      { dish: "Kutchi dabeli", note: "Spiced potato in a bun with peanuts and pomegranate; invented here.", price: "₹30–60" },
+      { dish: "Khichdi-kadhi", note: "Comfort rice-lentil with sour buttermilk curry.", price: "₹100–180" },
+      { dish: "Bajra rotla with ghee", note: "Millet flatbread with jaggery and white butter.", price: "₹60–120" }
+    ],
+    tips: [
+      "Border-area permits are needed for some sites — check at Bhuj collectorate or online.",
+      "Visit the White Rann on a full-moon night during winter for the best glow.",
+      "Buy handicrafts at craft villages; it supports artisans directly."
+    ]
+  },
+  {
+    id: "munsiyari", name: "Munsiyari", state: "Uttarakhand", country: "India", region: "North",
+    vibes: ["mountain", "trek", "culture"], hidden: 4,
+    budget: { low: 1100, mid: 2100, high: 4300 }, months: [3, 4, 5, 6, 9, 10, 11],
+    tagline: "Face to face with the Panchachuli peaks",
+    desc: "A Kumaon hill town facing the five Panchachuli summits. It is the traditional gateway to Milam Glacier and home to Johar valley culture.",
+    colors: ["#1e293b", "#93c5fd"], art: "mountain", lat: 30.07, lon: 80.24,
+    from: "Delhi → Kathgodam by train, then ~10 h by taxi via Almora–Thal. Allow a full day.",
+    gems: [
+      { name: "Khaliya Top trek", note: "A 5 km climb above the Himalayan treeline with wide views and meadows." },
+      { name: "Maheshwari Kund", note: "A small high-altitude lake with a calm, spiritual atmosphere." },
+      { name: "Tribal Heritage Museum", note: "Johar-Bhotia artefacts and photographs explaining trade-route history." }
+    ],
+    food: [
+      { dish: "Jambu-tadka dal", note: "Dal tempered with a Himalayan herb; Kumaoni classic.", price: "₹80–140" },
+      { dish: "Bhatt ki churkani", note: "Black soybean curry cooked in an iron pot.", price: "₹100–160" },
+      { dish: "Aloo ke gutke with bhang chutney", note: "Hill-style potatoes with tangy hemp-seed chutney.", price: "₹80–120" }
+    ],
+    tips: [
+      "The road is long; break the journey at Almora or Chaukori.",
+      "Pre-arrange trek guides through local operators for Milam or Namik.",
+      "Weather changes fast — carry layers year-round."
+    ]
+  },
+  {
+    id: "orchha", name: "Orchha", state: "Madhya Pradesh", country: "India", region: "Central",
+    vibes: ["culture", "spiritual", "nature"], hidden: 4,
+    budget: { low: 900, mid: 1800, high: 3800 }, months: [10, 11, 12, 1, 2, 3],
+    tagline: "A medieval Bundela town frozen by the Betwa",
+    desc: "A 16th-century capital with palaces, temples and royal chhatris along the Betwa river. Raja Ram Temple is unusual: Ram is worshipped as a king here.",
+    colors: ["#7f1d1d", "#fbbf24"], art: "heritage", lat: 25.35, lon: 78.64,
+    from: "Train to Jhansi (well connected from Delhi, ~4–5 h), then 30 min by auto or cab.",
+    gems: [
+      { name: "Chhatris at sunset", note: "Fourteen royal cenotaphs by the Betwa; watch vultures circle at dusk." },
+      { name: "Jahangir Mahal", note: "Mughal-Rajput palace with intricate balconies and rooftop views." },
+      { name: "Rafting on the Betwa", note: "Gentle seasonal rapids near Kachhua Ghat (check season)." }
+    ],
+    food: [
+      { dish: "Poha-jalebi breakfast", note: "A Madhya Pradesh morning ritual.", price: "₹30–60" },
+      { dish: "Dal bafla", note: "Baked wheat balls with ghee and lentils.", price: "₹100–180" },
+      { dish: "Bhutte ka kees", note: "Grated corn cooked in milk and spices.", price: "₹50–90" }
+    ],
+    tips: [
+      "Visit Raja Ram Temple in the evening for the arti.",
+      "A combined ticket covers the fort complex; carry ID for Indian-rate tickets.",
+      "Winter mornings are foggy — go late for photos."
+    ]
+  },
+  {
+    id: "tarkarli", name: "Tarkarli", state: "Maharashtra", country: "India", region: "West",
+    vibes: ["beach", "food", "adventure"], hidden: 3,
+    budget: { low: 1200, mid: 2400, high: 5000 }, months: [10, 11, 12, 1, 2, 3, 4, 5],
+    tagline: "Clear water, a sea fort and Malvani flavors",
+    desc: "A Konkan village where the Karli river meets the Arabian Sea. Clear-water snorkeling, dolphin cruises and the Sindhudurg sea fort built by Shivaji Maharaj.",
+    colors: ["#075985", "#67e8f9"], art: "beach", lat: 16.02, lon: 73.47,
+    from: "Train to Kudal or Sindhudurg station (Konkan Railway), then a 30–40 min cab.",
+    gems: [
+      { name: "Sindhudurg Fort", note: "A 17th-century island fort reachable by a short boat ride." },
+      { name: "Devbag Sangam", note: "Beach where river meets sea; sunset boat ride and quiet sand." },
+      { name: "Scuba & snorkeling at Tsunami Island", note: "One of the few places in Maharashtra with decent reef visibility." }
+    ],
+    food: [
+      { dish: "Malvani fish thali", note: "Surmai or pomfret fry with solkadhi and rice.", price: "₹180–350" },
+      { dish: "Kombdi vade", note: "Chicken curry with deep-fried puri-like bread.", price: "₹180–280" },
+      { dish: "Sol kadhi", note: "Kokum coconut milk digestif.", price: "₹30–60" }
+    ],
+    tips: [
+      "Water sports operate Oct–May; monsoon is closed.",
+      "Choose a family-run Malvani homestay for the best meals.",
+      "Dolphin watching is best early morning on a boat."
+    ]
+  },
+  {
+    id: "chettinad", name: "Chettinad", state: "Tamil Nadu", country: "India", region: "South",
+    vibes: ["culture", "food"], hidden: 4,
+    budget: { low: 1000, mid: 2000, high: 4500 }, months: [11, 12, 1, 2, 3],
+    tagline: "Palatial mansions and the spiciest kitchens in India",
+    desc: "Around Karaikudi lie 70+ villages with palatial mansions built by the Nattukottai Chettiar merchants, with Burma teak, Italian marble and Belgian glass. The cuisine is legendary.",
+    colors: ["#431407", "#f97316"], art: "heritage", lat: 10.07, lon: 78.78,
+    from: "Fly/train to Madurai or Trichy; Karaikudi is ~90 km from both.",
+    gems: [
+      { name: "Chettinad mansion stays", note: "Heritage hotels in Kanadukathan, Athangudi and Kothamangalam offer tours." },
+      { name: "Athangudi tile workshops", note: "Watch handmade colored floor tiles being cast on glass." },
+      { name: "Kanadukathan Chettinad Palace", note: "Ornate architecture on a grand scale; ask a local guide." }
+    ],
+    food: [
+      { dish: "Chettinad pepper chicken", note: "Freshly ground spice, deeply peppery.", price: "₹200–350" },
+      { dish: "Kuzhi paniyaram", note: "Dumpling-style savoury balls, steamed or pan-cooked.", price: "₹40–80" },
+      { dish: "Kavuni arisi halwa", note: "Black rice sweet, once reserved for royalty.", price: "₹60–100" }
+    ],
+    tips: [
+      "Antique markets in Karaikudi sell old brass and teak; bargain politely.",
+      "Many mansions allow entry only with a guide — ask your hotel.",
+      "Peak summer is hot; plan Nov–Mar."
+    ]
+  },
+  {
+    id: "sandakphu", name: "Sandakphu", state: "West Bengal", country: "India", region: "East",
+    vibes: ["trek", "mountain", "adventure"], hidden: 3,
+    budget: { low: 1500, mid: 2600, high: 5000 }, months: [4, 5, 10, 11, 12],
+    tagline: "Four of the world's five highest peaks on one skyline",
+    desc: "The highest point in West Bengal (≈3,636 m) on the Singalila ridge, from where Everest, Kangchenjunga, Lhotse and Makalu are visible. Many trekkers also spot red pandas in Singalila National Park.",
+    colors: ["#312e81", "#e879f9"], art: "mountain", lat: 27.1, lon: 88.0,
+    from: "Fly/train to Bagdogra/NJP, then ~3 h to Manebhanjan (trek start).",
+    gems: [
+      { name: "Sleeping Buddha view", note: "Kangchenjunga resembles a reclining Buddha from Phalut/Sandakphu." },
+      { name: "Kalipokhri lake", note: "A small black pond on the route with yak grazing nearby." },
+      { name: "Gurdum & Sabargram", note: "Quiet ridge villages with simple teahouses." }
+    ],
+    food: [
+      { dish: "Dal-bhat-tarkari", note: "Unlimited rice-lentil-veg set at teahouses.", price: "₹150–250" },
+      { dish: "Momos & thukpa", note: "Warm Himalayan staples.", price: "₹80–150" },
+      { dish: "Tongba", note: "Warm millet beer sipped through a bamboo straw.", price: "₹100–180" }
+    ],
+    tips: [
+      "Guides are mandatory within Singalila National Park.",
+      "Book teahouses in advance for Oct–Nov peak season.",
+      "Carry cash; there are no ATMs on the trek."
+    ]
+  },
+  {
+    id: "turtuk", name: "Turtuk", state: "Ladakh", country: "India", region: "North",
+    vibes: ["culture", "mountain", "food"], hidden: 5,
+    budget: { low: 1500, mid: 2800, high: 5200 }, months: [5, 6, 7, 8, 9],
+    tagline: "The last village before the line — Balti culture in India",
+    desc: "A village in the Shyok valley, historically part of Baltistan, with Balti language, apricot orchards and a distinct culture. It became accessible to tourists in 2010.",
+    colors: ["#451a03", "#fcd34d"], art: "desert", lat: 34.84, lon: 76.82,
+    from: "Leh → Khardung La → Nubra → Hunder → Turtuk (about 7–8 h from Leh). Inner Line Permit needed.",
+    gems: [
+      { name: "Turtuk Heritage House & Museum", note: "Small museum on Balti life, with old household items and photographs." },
+      { name: "Apricot orchards in August", note: "Harvest season; locals dry fruit on rooftops." },
+      { name: "Thang village viewpoint", note: "A rare spot with panoramic views near the border, accessible by road." }
+    ],
+    food: [
+      { dish: "Balti khambir bread", note: "Local flatbread eaten with butter tea.", price: "₹30–60" },
+      { dish: "Dried apricot & walnut", note: "Fresh from orchards; great snacks.", price: "₹100–200" },
+      { dish: "Butter tea (po cha)", note: "Salty butter tea, a high-altitude staple.", price: "₹30–50" }
+    ],
+    tips: [
+      "Carry ID and permit copies; checkpoints are strict.",
+      "Respect local culture — dress modestly and ask before taking photos.",
+      "Stock up on cash in Leh; ATMs are rare."
+    ]
+  },
+  {
+    id: "bandipur", name: "Bandipur", state: "Gandaki Province", country: "Nepal", region: "International",
+    vibes: ["culture", "nature", "food"], hidden: 4,
+    budget: { low: 1300, mid: 2500, high: 5000 }, months: [10, 11, 12, 2, 3, 4],
+    tagline: "A car-free Newar hill town above the clouds",
+    desc: "A well-preserved Newar bazaar town at 1,000 m between Kathmandu and Pokhara. Stone-paved lanes, old shopfronts and views of Annapurna and Dhaulagiri.",
+    colors: ["#9a3412", "#fdba74"], art: "heritage", lat: 27.93, lon: 84.41,
+    from: "Delhi → Kathmandu by flight, then ~4–5 h by tourist bus to Dumre and a short climb to Bandipur.",
+    gems: [
+      { name: "Siddha Gufa", note: "One of Nepal's largest caves, with stalactites; hire a local guide and torch." },
+      { name: "Tundikhel viewpoint", note: "Grassy ridge for Himalayan sunsets and tea." },
+      { name: "Thani Mai temple", note: "A hilltop shrine reached by a short forest walk." }
+    ],
+    food: [
+      { dish: "Newari khaja set", note: "Beaten rice with buffalo meat, bean salad and pickles.", price: "NPR 400–700" },
+      { dish: "Chatamari", note: "Newari rice-flour 'pizza' with toppings.", price: "NPR 150–300" },
+      { dish: "Yomari", note: "Steamed rice-dough dumpling with sweet filling.", price: "NPR 80–150" }
+    ],
+    tips: [
+      "Indians can enter Nepal visa-free with valid ID; confirm current rules before travel.",
+      "The old bazaar is vehicle-free — pack light for the uphill stroll.",
+      "Hotels fill in Oct–Nov; book early."
+    ]
+  }
+];
+
+/* Starter community tips (shown alongside visitor submissions) */
+window.ORBITAL_SEED_SUBMISSIONS = [
+  { id: "seed1", place: "Chopta", title: "Sunrise tea at Tungnath's last shop", note: "A tiny tea stall near the temple opens before dawn and serves hot ginger chai. Cheaper and warmer than the camps below.", category: "Local tip", rating: 5, author: "Orbital Team", votes: 12, date: "2026-09-12", seed: true },
+  { id: "seed2", place: "Gokarna", title: "Paradise beach shack with no menu", note: "Order whatever the cook caught that morning. Ask for the lime-chilli fry.", category: "Food", rating: 4, author: "Orbital Team", votes: 8, date: "2026-09-18", seed: true },
+  { id: "seed3", place: "Majuli", title: "Evening prayers at a satra", note: "Evenings are peaceful; sit at the back and listen to the borgeet singing.", category: "Culture", rating: 5, author: "Orbital Team", votes: 6, date: "2026-09-25", seed: true }
+];
+
+</script>
+<script>
+/* ORBITAL — Hidden World
+   © Saim Patel. Vanilla JS, no build step.
+   Features: 3D ring, budget explorer, filters, quiz, food finder, favourites + trip planner,
+   place detail modal, community submissions (localStorage), global search, share links, PWA. */
+
+(function () {
+  'use strict';
+
+  var DATA = window.ORBITAL_DATA || [];
+  var SEEDS = window.ORBITAL_SEED_SUBMISSIONS || [];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var MONTHS_FULL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var STYLE_NAME = { low: 'Backpacker', mid: 'Comfortable', high: 'Treat yourself' };
+  var VIBE_LABEL = { mountain: '⛰ Mountains', beach: '🏖 Beaches', culture: '🏛 Culture', nature: '🌿 Nature', trek: '🥾 Trekking', adventure: '🧗 Adventure', spiritual: '🕉 Spiritual', food: '🍜 Food', desert: '🏜 Desert' };
+  var NOW_MONTH = new Date().getMonth() + 1;
+
+  /* ---------- helpers ---------- */
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function inr(n) { return '₹' + Math.round(n).toLocaleString('en-IN'); }
+  function byId(id) { return DATA.filter(function (d) { return d.id === id; })[0]; }
+  function store(key, val) {
+    try {
+      if (val === undefined) { var raw = localStorage.getItem('orbital.' + key); return raw ? JSON.parse(raw) : null; }
+      localStorage.setItem('orbital.' + key, JSON.stringify(val));
+    } catch (e) { return null; }
+  }
+  function hash(str) { var h = 0; for (var i = 0; i < str.length; i++) { h = (h * 31 + str.charCodeAt(i)) | 0; } return Math.abs(h); }
+  function stars(n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
+
+  var toastTimer;
+  function toast(msg) {
+    var t = $('#toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return fallbackCopy(text); });
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta); return ok;
+  }
+
+  /* ---------- generated artwork (no external images needed) ---------- */
+  function art(d, uid) {
+    var h = hash(d.id), c0 = d.colors[0], c1 = d.colors[1];
+    var sunX = 70 + (h % 260), sunY = d.art === 'beach' ? 150 : 62 + (h % 30);
+    var g = 'g' + uid + d.id;
+    var out = '<svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<defs><linearGradient id="' + g + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + c0 + '"/><stop offset="1" stop-color="' + c1 + '"/></linearGradient>' +
+      '<radialGradient id="' + g + 's"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>' +
+      '<rect width="400" height="240" fill="url(#' + g + ')"/>';
+    for (var i = 0; i < 14; i++) { out += '<circle cx="' + ((h * (i + 3)) % 400) + '" cy="' + ((h * (i + 7)) % 110) + '" r="' + (0.6 + (i % 3) * 0.4) + '" fill="#fff" opacity="' + (0.25 + (i % 4) * 0.12) + '"/>'; }
+    out += '<circle cx="' + sunX + '" cy="' + sunY + '" r="46" fill="url(#' + g + 's)"/><circle cx="' + sunX + '" cy="' + sunY + '" r="17" fill="#fff" opacity=".92"/>';
+    var j = h % 30;
+    switch (d.art) {
+      case 'mountain':
+        out += '<polygon points="0,190 ' + (60 + j) + ',100 130,165 ' + (200 - j) + ',70 280,170 ' + (340 + j / 2) + ',108 400,180 400,240 0,240" fill="#000" opacity=".32"/>' +
+          '<polygon points="' + (190 - j) + ',70 ' + (170 - j) + ',96 ' + (186 - j) + ',90 ' + (200 - j) + ',100 ' + (214 - j) + ',90" fill="#fff" opacity=".7"/>' +
+          '<polygon points="0,215 90,150 160,200 250,140 330,195 400,160 400,240 0,240" fill="#000" opacity=".5"/>' +
+          '<polygon points="0,232 120,196 230,226 330,200 400,222 400,240 0,240" fill="#000" opacity=".7"/>';
+        break;
+      case 'beach':
+        out += '<rect y="165" width="400" height="75" fill="#000" opacity=".25"/>' +
+          '<path d="M0 185 Q50 172 100 185 T200 185 T300 185 T400 185 V240 H0Z" fill="#fff" opacity=".12"/>' +
+          '<path d="M0 205 Q60 192 120 205 T240 205 T360 205 T480 205 V240 H0Z" fill="#fff" opacity=".16"/>' +
+          '<path d="M0 225 Q100 212 200 226 T400 222 V240 H0Z" fill="#fde68a" opacity=".55"/>' +
+          '<path d="M' + (300 + j) + ' 225 q2 -40 -10 -62 M' + (300 + j) + ' 225 q10 -30 28 -46" stroke="#000" stroke-opacity=".6" stroke-width="3" fill="none"/>' +
+          '<path d="M' + (290 + j) + ' 163 q-22 -6 -34 8 M' + (290 + j) + ' 163 q16 -16 36 -6 M' + (290 + j) + ' 163 q-4 -20 14 -28" stroke="#000" stroke-opacity=".55" stroke-width="3" fill="none"/>';
+        break;
+      case 'desert':
+        out += '<path d="M0 170 Q90 120 170 165 T400 150 V240 H0Z" fill="#000" opacity=".22"/>' +
+          '<path d="M0 205 Q120 150 230 200 T400 185 V240 H0Z" fill="#000" opacity=".38"/>' +
+          '<path d="M0 232 Q140 190 260 226 T400 215 V240 H0Z" fill="#000" opacity=".55"/>';
+        break;
+      case 'forest':
+        out += '<polygon points="0,170 100,120 190,168 290,110 400,165 400,240 0,240" fill="#000" opacity=".28"/>';
+        for (var t = 0; t < 18; t++) {
+          var tx = t * 24 + (h % 12), ty = 200 + (t % 3) * 8, th = 50 + ((h >> t) % 28);
+          out += '<polygon points="' + tx + ',' + ty + ' ' + (tx + 14) + ',' + (ty - th) + ' ' + (tx + 28) + ',' + ty + '" fill="#000" opacity="' + (0.5 + (t % 3) * 0.1) + '"/>';
+        }
+        out += '<rect y="228" width="400" height="12" fill="#000" opacity=".7"/>';
+        break;
+      case 'river':
+        out += '<path d="M0 170 Q100 120 200 160 T400 140 V240 H0Z" fill="#000" opacity=".3"/>' +
+          '<path d="M0 210 Q100 180 200 205 T400 190 V240 H0Z" fill="#000" opacity=".5"/>' +
+          '<path d="M' + (150 + j) + ' 240 C' + (120 + j) + ' 205 ' + (230 + j) + ' 195 ' + (190 + j) + ' 165 S' + (210 + j) + ' 150 ' + (200 + j) + ' 140" stroke="#bae6fd" stroke-opacity=".7" stroke-width="10" fill="none" stroke-linecap="round"/>';
+        break;
+      case 'canyon':
+        out += '<polygon points="0,150 60,150 60,175 120,175 120,195 175,195 175,240 0,240" fill="#000" opacity=".4"/>' +
+          '<polygon points="400,140 330,140 330,170 280,170 280,192 225,192 225,240 400,240" fill="#000" opacity=".5"/>' +
+          '<polygon points="0,205 80,205 80,222 150,222 150,240 0,240" fill="#000" opacity=".6"/>' +
+          '<path d="M175 240 Q200 205 225 240Z" fill="#7dd3fc" opacity=".6"/>';
+        break;
+      case 'heritage':
+        out += '<rect y="198" width="400" height="42" fill="#000" opacity=".6"/>';
+        var base = [[40, 70, 22], [120, 96, 28], [200, 120, 34], [290, 92, 26], [350, 66, 20]];
+        base.forEach(function (b) {
+          var x = b[0] + (j % 10), top = 198 - b[1];
+          out += '<rect x="' + (x - b[2]) + '" y="' + top + '" width="' + (b[2] * 2) + '" height="' + b[1] + '" fill="#000" opacity=".55"/>' +
+            '<path d="M' + (x - b[2]) + ' ' + top + ' Q' + x + ' ' + (top - b[2] * 1.5) + ' ' + (x + b[2]) + ' ' + top + 'Z" fill="#000" opacity=".55"/>' +
+            '<rect x="' + (x - 3) + '" y="' + (top - b[2] * 1.5 - 12) + '" width="6" height="14" fill="#000" opacity=".55"/>' +
+            '<path d="M' + (x - 6) + ' 198 v-22 a6 6 0 0 1 12 0 v22Z" fill="' + c1 + '" opacity=".75"/>';
+        });
+        break;
+    }
+    return out + '</svg>';
+  }
+
+  /* ---------- state ---------- */
+  var saved = store('saved') || [];
+  var votes = store('votes') || {};
+  var userSubs = store('subs') || [];
+  var plan = store('plan') || { days: 4, people: 2, style: 'mid', travel: 4000 };
+
+  /* ---------- ring (hero) ---------- */
+  var ring = $('#ring');
+  var ringPlaces = DATA.slice().sort(function (a, b) { return b.hidden - a.hidden || a.name.localeCompare(b.name); }).slice(0, 10);
+  ringPlaces.forEach(function (d, i) {
+    var num = (i < 9 ? '0' : '') + (i + 1);
+    var p = document.createElement('button');
+    p.type = 'button'; p.className = 'panel'; p.setAttribute('data-id', d.id); p.setAttribute('aria-label', 'Open ' + d.name);
+    p.innerHTML =
+      '<div class="panel-face panel-face--text"><div class="p-num">' + num + '</div><div><div class="p-label">' + esc(d.name.toUpperCase()) + '</div><div class="p-meta">' + esc(d.state.toUpperCase()) + '</div></div></div>' +
+      '<div class="panel-face panel-face--image">' + art(d, 'r') + '<div class="panel-scrim"></div><div class="panel-cap"><span class="p-num">' + num + '</span>' + esc(d.name) + '<small>FROM ' + inr(d.budget.low) + ' / DAY</small></div></div>';
+    ring.appendChild(p);
+  });
+
+  var panels = $$('.panel', ring), count = panels.length;
+  var spacingLevels = [0.74, 0.92, 1.08], spacingIndex = 1;
+  function baseRadius() { return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ring-radius')) || 360; }
+  function effectiveRadius() { return baseRadius() * spacingLevels[spacingIndex]; }
+  function positionPanels() {
+    var r = effectiveRadius();
+    panels.forEach(function (panel, i) {
+      panel.style.setProperty('--ry', (360 / count) * i + 'deg');
+      panel.style.setProperty('--tz', r + 'px');
+      panel.style.setProperty('--rz', (Math.sin((i / count) * Math.PI * 2) * 8).toFixed(2) + 'deg');
+      panel.style.setProperty('--i', i);
+    });
+  }
+  positionPanels();
+  var resizeTimer;
+  window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(positionPanels, 200); });
+
+  var spacingSteps = $$('.spacing-step');
+  spacingSteps.forEach(function (b) {
+    b.addEventListener('click', function () {
+      spacingIndex = parseInt(b.getAttribute('data-space'), 10);
+      positionPanels();
+      spacingSteps.forEach(function (x) { x.classList.toggle('is-active', x === b); });
+    });
+  });
+
+  var stage = $('.stage'), parallax = $('.parallax');
+  var rotation = 0, velocity = 0, baseDrift = reduceMotion ? 0 : 0.12, friction = 0.94, MAXV = 7, DRAG = 0.32, WHEEL = 0.05;
+  var dragging = false, lastX = 0, dragDist = 0;
+  function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  var targetX = 0, targetY = 0, curX = 0, curY = 0;
+  if (!reduceMotion) {
+    window.addEventListener('mousemove', function (e) {
+      targetY = ((e.clientX / window.innerWidth) - 0.5) * 28;
+      targetX = (-((e.clientY / window.innerHeight) - 0.5) * 30) + 10;
+    });
+  }
+  stage.addEventListener('pointerdown', function (e) { dragging = true; lastX = e.clientX; velocity = 0; dragDist = 0; stage.classList.add('dragging'); });
+  window.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var dx = e.clientX - lastX; lastX = e.clientX; dragDist += Math.abs(dx);
+    rotation += dx * DRAG; velocity = clamp(dx * DRAG, -MAXV, MAXV);
+  });
+  function endDrag() { if (!dragging) return; dragging = false; stage.classList.remove('dragging'); }
+  window.addEventListener('pointerup', endDrag);
+  window.addEventListener('pointercancel', endDrag);
+  stage.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) { e.preventDefault(); velocity = clamp(velocity + e.deltaX * WHEEL, -MAXV, MAXV); }
+  }, { passive: false });
+  /* click vs drag: open place only when the pointer barely moved */
+  ring.addEventListener('click', function (e) {
+    var p = e.target.closest('.panel');
+    if (p && dragDist < 6) openModal(p.getAttribute('data-id'));
+  });
+  var heroVisible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; }).observe($('.hero'));
+  }
+  function frame() {
+    if (heroVisible) {
+      if (!dragging) { rotation += baseDrift + velocity; velocity *= friction; if (Math.abs(velocity) < 0.0015) velocity = 0; }
+      ring.style.transform = 'rotateY(' + rotation.toFixed(3) + 'deg)';
+      if (!reduceMotion) {
+        curX += (targetX - curX) * 0.06; curY += (targetY - curY) * 0.06;
+        parallax.style.transform = 'rotateX(' + curX.toFixed(2) + 'deg) rotateY(' + curY.toFixed(2) + 'deg)';
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+
+  $('#visualsSwitch').addEventListener('click', function () {
+    var on = this.getAttribute('aria-checked') !== 'true';
+    this.setAttribute('aria-checked', on); document.body.classList.toggle('visuals-on', on);
+  });
+  $('#zoomSwitch').addEventListener('click', function () {
+    var on = this.getAttribute('aria-checked') !== 'true';
+    this.setAttribute('aria-checked', on); $('.ring-tilt').style.setProperty('--zoom', on ? '1.24' : '1');
+  });
+
+  /* ---------- nav, menu, progress, reveal ---------- */
+  var toggle = $('.menu-toggle'), mobileMenu = $('#mobileMenu');
+  toggle.addEventListener('click', function () {
+    var open = mobileMenu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open); document.body.classList.toggle('no-scroll', open);
+  });
+  $$('a', mobileMenu).forEach(function (a) { a.addEventListener('click', function () { mobileMenu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); document.body.classList.remove('no-scroll'); }); });
+
+  var prog = $('#progress');
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  var revealEls = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }); }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+    var navLinks = $$('.nav-links a');
+    var spy = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { navLinks.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + x.target.id); }); } });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    $$('section[id]').forEach(function (s) { spy.observe(s); });
+  } else { revealEls.forEach(function (el) { el.classList.add('visible'); }); }
+  setTimeout(function () { revealEls.forEach(function (el) { el.classList.add('visible'); }); }, 4000);
+
+  /* ---------- stats ---------- */
+  function countUp(el, to) {
+    if (reduceMotion) { el.textContent = to; return; }
+    var start = null;
+    function step(ts) { if (!start) start = ts; var p = Math.min((ts - start) / 1100, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  function allSubs() { return SEEDS.concat(userSubs); }
+  function updateStats() {
+    countUp($('#statPlaces'), DATA.length);
+    countUp($('#statGems'), DATA.reduce(function (n, d) { return n + d.gems.length; }, 0));
+    countUp($('#statDishes'), DATA.reduce(function (n, d) { return n + d.food.length; }, 0));
+    $('#statCommunity').textContent = allSubs().length;
+  }
+
+  /* ---------- explorer ---------- */
+  var vibes = [];
+  DATA.forEach(function (d) { d.vibes.forEach(function (v) { if (vibes.indexOf(v) < 0) vibes.push(v); }); });
+  vibes.sort();
+  var activeVibes = [];
+  $('#vibeChips').innerHTML = vibes.map(function (v) { return '<button type="button" class="chip" data-v="' + v + '" aria-pressed="false">' + (VIBE_LABEL[v] || v) + '</button>'; }).join('');
+  $('#vibeChips').addEventListener('click', function (e) {
+    var c = e.target.closest('.chip'); if (!c) return;
+    var v = c.getAttribute('data-v'), i = activeVibes.indexOf(v);
+    if (i < 0) activeVibes.push(v); else activeVibes.splice(i, 1);
+    c.classList.toggle('on', i < 0); c.setAttribute('aria-pressed', i < 0);
+    renderCards();
+  });
+  $('#monthSel').innerHTML = '<option value="0">Any month</option>' + MONTHS_FULL.map(function (m, i) { return '<option value="' + (i + 1) + '">' + m + (i + 1 === NOW_MONTH ? ' (now)' : '') + '</option>'; }).join('');
+
+  var F = { budget: $('#budgetRange'), style: $('#styleSel'), region: $('#regionSel'), month: $('#monthSel'), sort: $('#sortSel'), q: $('#searchInput'), fav: $('#favOnly'), hid: $('#hiddenOnly') };
+  function searchText(d) {
+    return [d.name, d.state, d.country, d.region, d.tagline, d.vibes.join(' '),
+      d.food.map(function (f) { return f.dish + ' ' + f.note; }).join(' '), d.gems.map(function (g) { return g.name; }).join(' ')].join(' ').toLowerCase();
+  }
+  function filtered() {
+    var budget = +F.budget.value, style = F.style.value, region = F.region.value, month = +F.month.value, q = F.q.value.trim().toLowerCase();
+    var list = DATA.filter(function (d) {
+      if (d.budget[style] > budget) return false;
+      if (region !== 'all' && d.region !== region) return false;
+      if (month && d.months.indexOf(month) < 0) return false;
+      if (activeVibes.length && !activeVibes.some(function (v) { return d.vibes.indexOf(v) >= 0; })) return false;
+      if (F.fav.checked && saved.indexOf(d.id) < 0) return false;
+      if (F.hid.checked && d.hidden < 4) return false;
+      if (q && searchText(d).indexOf(q) < 0) return false;
+      return true;
+    });
+    var sort = F.sort.value;
+    list.forEach(function (d) {
+      var s = d.hidden * 10 + (d.months.indexOf(month || NOW_MONTH) >= 0 ? 15 : 0) + (1 - d.budget[style] / budget) * 20;
+      d._score = s;
+    });
+    list.sort(function (a, b) {
+      if (sort === 'hidden') return b.hidden - a.hidden || a.budget[style] - b.budget[style];
+      if (sort === 'cheap') return a.budget[style] - b.budget[style];
+      if (sort === 'name') return a.name.localeCompare(b.name);
+      return b._score - a._score;
+    });
+    return list;
+  }
+  function cardHTML(d, style, i) {
+    var on = saved.indexOf(d.id) >= 0, inSeason = d.months.indexOf(NOW_MONTH) >= 0;
+    return '<article class="card" data-id="' + d.id + '" tabindex="0" role="button" aria-label="Open ' + esc(d.name) + '" style="animation-delay:' + Math.min(i, 12) * 40 + 'ms">' +
+      '<div class="card-art">' + art(d, 'c') +
+      '<span class="badge gem">' + stars(d.hidden).replace(/☆/g, '') + ' HIDDEN</span>' +
+      (inSeason ? '<span class="badge season">IN SEASON NOW</span>' : '') +
+      '<button type="button" class="fav' + (on ? ' on' : '') + '" data-fav="' + d.id + '" aria-pressed="' + on + '" aria-label="' + (on ? 'Remove ' : 'Save ') + esc(d.name) + '">' + (on ? '♥' : '♡') + '</button></div>' +
+      '<div class="card-body"><div class="card-meta">' + esc(d.state) + ' · ' + esc(d.country) + '</div><h3>' + esc(d.name) + '</h3><p>' + esc(d.tagline) + '</p>' +
+      '<div class="card-foot"><span class="price">' + inr(d.budget[style]) + ' <small>/ day</small></span><span class="match">' + d.vibes.slice(0, 2).join(' · ') + '</span></div></div></article>';
+  }
+  function renderCards() {
+    var style = F.style.value, list = filtered();
+    $('#budgetVal').textContent = inr(F.budget.value);
+    $('#cards').innerHTML = list.map(function (d, i) { return cardHTML(d, style, i); }).join('');
+    $('#emptyState').hidden = list.length > 0;
+    $('#resultCount').textContent = list.length + ' of ' + DATA.length + ' places';
+  }
+  ['input', 'change'].forEach(function (ev) { Object.keys(F).forEach(function (k) { F[k].addEventListener(ev, renderCards); }); });
+  $('#resetBtn').addEventListener('click', function () {
+    F.budget.value = 2500; F.style.value = 'mid'; F.region.value = 'all'; F.month.value = 0; F.sort.value = 'match'; F.q.value = ''; F.fav.checked = false; F.hid.checked = false;
+    activeVibes = []; $$('.chip').forEach(function (c) { c.classList.remove('on'); c.setAttribute('aria-pressed', 'false'); });
+    renderCards();
+  });
+  $('#cards').addEventListener('click', function (e) {
+    var f = e.target.closest('.fav');
+    if (f) { e.stopPropagation(); toggleSave(f.getAttribute('data-fav')); return; }
+    var c = e.target.closest('.card'); if (c) openModal(c.getAttribute('data-id'));
+  });
+  $('#cards').addEventListener('keydown', function (e) {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('card')) { e.preventDefault(); openModal(e.target.getAttribute('data-id')); }
+  });
+
+  /* ---------- favourites + planner ---------- */
+  function toggleSave(id) {
+    var i = saved.indexOf(id), d = byId(id);
+    if (i < 0) { saved.push(id); toast('♥ ' + d.name + ' added to My Orbit'); } else { saved.splice(i, 1); toast(d.name + ' removed from My Orbit'); }
+    store('saved', saved); syncSaved();
+  }
+  function syncSaved() {
+    $('#savedCount').textContent = saved.length;
+    var keep = document.activeElement && document.activeElement.getAttribute && document.activeElement.getAttribute('data-fav');
+    renderCards(); renderPlanner();
+    if (keep) { var again = $('[data-fav="' + keep + '"]'); if (again) again.focus(); }
+    var mSave = $('#mSave');
+    if (!$('#modal').hidden && currentId) mSave.textContent = saved.indexOf(currentId) >= 0 ? '♥ SAVED' : '♡ SAVE';
+  }
+  var P = { days: $('#plDays'), people: $('#plPeople'), style: $('#plStyle'), travel: $('#plTravel') };
+  P.days.value = plan.days; P.people.value = plan.people; P.style.value = plan.style; P.travel.value = plan.travel;
+  function readPlan() {
+    plan = { days: clamp(+P.days.value || 1, 1, 30), people: clamp(+P.people.value || 1, 1, 20), style: P.style.value, travel: Math.max(0, +P.travel.value || 0) };
+    store('plan', plan);
+  }
+  function planTotals() {
+    var rows = saved.map(byId).filter(Boolean).map(function (d) {
+      var stay = d.budget[plan.style] * plan.days * plan.people, travel = plan.travel * plan.people;
+      return { d: d, stay: stay, travel: travel, total: stay + travel };
+    });
+    return { rows: rows, total: rows.reduce(function (n, r) { return n + r.total; }, 0) };
+  }
+  function renderPlanner() {
+    var t = planTotals();
+    $('#plannerList').innerHTML = t.rows.length ? t.rows.map(function (r) {
+      return '<div class="pl-row"><div class="thumb">' + art(r.d, 'p') + '</div><div><b data-open="' + r.d.id + '">' + esc(r.d.name) + '</b><small>' + esc(r.d.state) + ' · ' + plan.days + ' days · ' + plan.people + ' traveler' + (plan.people > 1 ? 's' : '') + '</small></div>' +
+        '<span class="pl-cost">' + inr(r.total) + '</span><button class="rm" data-rm="' + r.d.id + '" aria-label="Remove ' + esc(r.d.name) + '">×</button></div>';
+    }).join('') : '<div class="pl-empty">Nothing saved yet. Tap ♡ on any place to build your orbit.</div>';
+    var perPerson = plan.people ? t.total / plan.people : 0;
+    $('#plannerTotal').innerHTML = t.rows.length
+      ? '<div><span>Estimated total</span><br><b>' + inr(t.total) + '</b></div><div><span>Per person</span><br><b>' + inr(perPerson) + '</b></div><div><span>Places · days</span><br><b>' + t.rows.length + ' · ' + t.rows.length * plan.days + '</b></div>'
+      : '<span>Add places to see your estimate.</span>';
+  }
+  Object.keys(P).forEach(function (k) { P[k].addEventListener('input', function () { readPlan(); renderPlanner(); }); });
+  $('#plannerList').addEventListener('click', function (e) {
+    var rm = e.target.closest('[data-rm]'); if (rm) { toggleSave(rm.getAttribute('data-rm')); return; }
+    var op = e.target.closest('[data-open]'); if (op) openModal(op.getAttribute('data-open'));
+  });
+  function planText() {
+    var t = planTotals();
+    if (!t.rows.length) return '';
+    return 'My Orbit trip plan (Orbital by Saim Patel)\n' + plan.days + ' days per place · ' + plan.people + ' traveler(s) · ' + STYLE_NAME[plan.style] + '\n\n' +
+      t.rows.map(function (r, i) { return (i + 1) + '. ' + r.d.name + ', ' + r.d.state + ' — ' + inr(r.total) + ' (stay+food ' + inr(r.stay) + ', travel ' + inr(r.travel) + ')'; }).join('\n') +
+      '\n\nTotal: ' + inr(t.total) + ' (' + inr(t.total / plan.people) + ' per person)\nPrices are approximate.';
+  }
+  $('#copyPlan').addEventListener('click', function () {
+    var txt = planText(); if (!txt) { toast('Save a place first'); return; }
+    copyText(txt).then(function (ok) { toast(ok ? 'Plan copied to clipboard' : 'Could not copy — select and copy manually'); });
+  });
+  $('#clearPlan').addEventListener('click', function () { if (saved.length && confirm('Remove all saved places?')) { saved = []; store('saved', saved); syncSaved(); } });
+  $('#printPlan').addEventListener('click', function () {
+    var t = planTotals(); if (!t.rows.length) { toast('Save a place first'); return; }
+    var old = $('#printArea'); if (old) old.remove();
+    var div = document.createElement('div'); div.id = 'printArea';
+    div.innerHTML = '<h1>My Orbit trip plan</h1><p>' + plan.days + ' days per place · ' + plan.people + ' traveler(s) · ' + STYLE_NAME[plan.style] + '</p><table><tr><th>Place</th><th>Stay + food</th><th>Travel</th><th>Total</th></tr>' +
+      t.rows.map(function (r) { return '<tr><td>' + esc(r.d.name) + ', ' + esc(r.d.state) + '</td><td>' + inr(r.stay) + '</td><td>' + inr(r.travel) + '</td><td>' + inr(r.total) + '</td></tr>'; }).join('') +
+      '</table><h3 style="margin-top:14px">Total: ' + inr(t.total) + '</h3><p>Prices are approximate. Orbital by Saim Patel.</p>';
+    document.body.appendChild(div); window.print();
+  });
+
+  /* ---------- modal ---------- */
+  var currentId = null, currentTab = 'overview', lastFocus = null, calc = { days: 4, people: 2, style: 'mid', travel: 4000 };
+  var modal = $('#modal');
+  function openModal(id, tab) {
+    var d = byId(id); if (!d) return;
+    currentId = id; currentTab = tab || 'overview'; lastFocus = document.activeElement;
+    calc = { days: plan.days, people: plan.people, style: plan.style, travel: plan.travel };
+    $('#mArt').innerHTML = art(d, 'm');
+    $('#mMeta').textContent = (d.state + ' · ' + d.country).toUpperCase();
+    $('#mTitle').textContent = d.name; $('#mTag').textContent = d.tagline;
+    $('#mSave').textContent = saved.indexOf(id) >= 0 ? '♥ SAVED' : '♡ SAVE';
+    modal.hidden = false; document.body.classList.add('no-scroll');
+    $('.modal-card', modal).scrollTop = 0;
+    renderTab();
+    try { history.replaceState(null, '', '#p/' + id); } catch (e) {}
+    $('.modal-close', modal).focus();
+  }
+  function closeModal() {
+    modal.hidden = true; currentId = null; document.body.classList.remove('no-scroll');
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function renderTab() {
+    var d = byId(currentId), b = $('#mBody'), html = '';
+    $$('#mTabs button').forEach(function (t) { t.classList.toggle('on', t.getAttribute('data-tab') === currentTab); });
+    if (currentTab === 'overview') {
+      html = '<p>' + esc(d.desc) + '</p><div class="kv"><div><small>Hidden score</small><b>' + stars(d.hidden) + '</b></div><div><small>From</small><b>' + inr(d.budget.low) + ' / day</b></div><div><small>Region</small><b>' + esc(d.region) + '</b></div><div><small>Vibes</small><b>' + d.vibes.join(', ') + '</b></div></div>' +
+        '<p style="margin-top:20px"><b style="color:#fff">Best months</b></p><div class="months">' + MONTHS.map(function (m, i) { return '<span class="' + (d.months.indexOf(i + 1) >= 0 ? 'ok' : '') + (i + 1 === NOW_MONTH ? ' now' : '') + '" title="' + MONTHS_FULL[i] + '">' + m + '</span>'; }).join('') + '</div>' +
+        '<p style="margin-top:20px"><b style="color:#fff">How to get there</b><br>' + esc(d.from) + '</p>' +
+        '<a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(d.name + ' ' + d.state + ' ' + d.country) + '">Open in Google Maps ↗</a>';
+    } else if (currentTab === 'gems') {
+      html = '<ul class="list">' + d.gems.map(function (g) { return '<li><b>💎 ' + esc(g.name) + '</b>' + esc(g.note) + '</li>'; }).join('') + '</ul>';
+    } else if (currentTab === 'food') {
+      html = '<ul class="list">' + d.food.map(function (f) { return '<li><b>🍽 ' + esc(f.dish) + '</b>' + esc(f.note) + ' <em>' + esc(f.price) + '</em></li>'; }).join('') + '</ul>';
+    } else if (currentTab === 'tips') {
+      html = '<ul class="list tips">' + d.tips.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+    } else if (currentTab === 'cost') {
+      html = '<div class="cost-calc"><div class="field"><label for="cDays">Days</label><input id="cDays" type="number" min="1" max="30" value="' + calc.days + '"></div>' +
+        '<div class="field"><label for="cPeople">Travelers</label><input id="cPeople" type="number" min="1" max="20" value="' + calc.people + '"></div>' +
+        '<div class="field"><label for="cStyle">Style</label><select id="cStyle">' + ['low', 'mid', 'high'].map(function (s) { return '<option value="' + s + '"' + (s === calc.style ? ' selected' : '') + '>' + STYLE_NAME[s] + '</option>'; }).join('') + '</select></div></div>' +
+        '<div class="field" style="margin-bottom:16px"><label for="cTravel">Travel cost per person to get there (₹)</label><input id="cTravel" type="number" min="0" step="500" value="' + calc.travel + '"></div><div id="costOut"></div>';
+    } else if (currentTab === 'community') {
+      var subs = allSubs().filter(function (s) { return s.place.toLowerCase() === d.name.toLowerCase(); });
+      html = (subs.length ? subs.map(commItemHTML).join('') : '<p>No tips yet for ' + esc(d.name) + '. Be the first to share one.</p>') + '<p style="margin-top:14px"><button class="btn btn-sm" id="addTipHere" type="button">ADD A TIP</button></p>';
+    }
+    b.innerHTML = html;
+    if (currentTab === 'cost') { bindCost(); updateCost(); }
+    if (currentTab === 'community') {
+      $('#addTipHere').addEventListener('click', function () { var n = byId(currentId).name; closeModal(); $('#gPlace').value = n; $('#community').scrollIntoView(); setTimeout(function () { $('#gTitle').focus(); }, 600); });
+    }
+  }
+  function bindCost() {
+    [['cDays', 'days'], ['cPeople', 'people'], ['cStyle', 'style'], ['cTravel', 'travel']].forEach(function (p) {
+      $('#' + p[0]).addEventListener('input', function () {
+        var v = this.value; calc[p[1]] = p[1] === 'style' ? v : (+v || 0); updateCost();
+      });
+    });
+  }
+  function updateCost() {
+    var d = byId(currentId), days = clamp(calc.days || 1, 1, 30), ppl = clamp(calc.people || 1, 1, 20);
+    var perDay = d.budget[calc.style], stay = perDay * 0.45 * days * ppl, food = perDay * 0.3 * days * ppl, local = perDay * 0.15 * days * ppl, act = perDay * 0.1 * days * ppl, travel = (calc.travel || 0) * ppl;
+    var total = stay + food + local + act + travel;
+    var seg = [['Stay', stay, '#8b5cf6'], ['Food', food, '#06b6d4'], ['Local transport', local, '#f59e0b'], ['Activities', act, '#ec4899'], ['Getting there', travel, '#64748b']];
+    $('#costOut').innerHTML = '<div class="kv"><div><small>Total</small><b>' + inr(total) + '</b></div><div><small>Per person</small><b>' + inr(total / ppl) + '</b></div><div><small>Per day / person</small><b>' + inr(perDay) + '</b></div></div>' +
+      '<div class="cost-bar">' + seg.map(function (s) { return '<i style="width:' + (total ? s[1] / total * 100 : 0) + '%;background:' + s[2] + '" title="' + s[0] + '"></i>'; }).join('') + '</div>' +
+      '<div class="kv">' + seg.map(function (s) { return '<div><small style="color:' + s[2] + '">● ' + s[0] + '</small><b>' + inr(s[1]) + '</b></div>'; }).join('') + '</div>' +
+      '<p style="margin-top:14px;font-size:.85rem">Estimates are approximate and for planning only. Check current prices before booking.</p>';
+  }
+  $('#mTabs').addEventListener('click', function (e) { var t = e.target.closest('button'); if (t) { currentTab = t.getAttribute('data-tab'); renderTab(); } });
+  $('#mSave').addEventListener('click', function () { if (currentId) toggleSave(currentId); });
+  $('#mShare').addEventListener('click', function () {
+    var url = location.origin + location.pathname + '#p/' + currentId, d = byId(currentId);
+    if (navigator.share) { navigator.share({ title: d.name + ' — Orbital', text: d.tagline, url: url }).catch(function () {}); return; }
+    copyText(url).then(function (ok) { toast(ok ? 'Link copied' : url); });
+  });
+  modal.addEventListener('click', function (e) { if (e.target.hasAttribute('data-close')) closeModal(); });
+
+  /* ---------- quiz ---------- */
+  var QUIZ = [
+    { q: 'What kind of trip are you craving?', key: 'vibe', opts: [['⛰', 'Mountains & trekking', ['mountain', 'trek']], ['🏖', 'Beaches & sea', ['beach']], ['🏛', 'Culture & history', ['culture', 'spiritual']], ['🌿', 'Nature & wildlife', ['nature', 'adventure']], ['🍜', 'Food first', ['food']]] },
+    { q: 'What is your daily budget per person?', key: 'budget', opts: [['💸', 'Under ₹1,500', 1500], ['👍', '₹1,500 – ₹2,500', 2500], ['✨', '₹2,500 – ₹4,000', 4000], ['💎', 'No limit', 99999]] },
+    { q: 'When are you travelling?', key: 'season', opts: [['❄️', 'Winter (Dec–Feb)', [12, 1, 2]], ['🌸', 'Spring (Mar–May)', [3, 4, 5]], ['🌧', 'Monsoon (Jun–Aug)', [6, 7, 8]], ['🍂', 'Autumn (Sep–Nov)', [9, 10, 11]], ['🗓', 'Right now', [NOW_MONTH]]] },
+    { q: 'How off-the-beaten-path do you want it?', key: 'hidden', opts: [['🙂', 'Some tourists are fine', 1], ['🧭', 'Fairly quiet', 3], ['🕵️', 'Truly hidden', 4]] }
+  ];
+  var quizState = { i: 0, a: {} };
+  function renderQuiz() {
+    var box = $('#quizBox');
+    if (quizState.i >= QUIZ.length) {
+      var a = quizState.a;
+      var scored = DATA.map(function (d) {
+        var s = 0;
+        var vm = d.vibes.filter(function (v) { return a.vibe.indexOf(v) >= 0; }).length; s += Math.min(vm, 2) * 25;
+        var price = d.budget.mid; s += price <= a.budget ? 25 : Math.max(0, 25 - (price - a.budget) / 100);
+        var sm = d.months.filter(function (m) { return a.season.indexOf(m) >= 0; }).length / a.season.length; s += sm * 15;
+        s += d.hidden >= a.hidden ? 10 : 0;
+        return { d: d, s: Math.min(100, Math.round(s)) };
+      }).sort(function (x, y) { return y.s - x.s; }).slice(0, 4);
+      box.innerHTML = '<div class="q-step">YOUR TOP MATCHES</div><h3 class="q-title">Your orbit is ready</h3><div class="q-results">' + scored.map(function (r) {
+        return '<button type="button" class="q-res" data-open="' + r.d.id + '"><span class="thumb">' + art(r.d, 'q') + '</span><span><b>' + esc(r.d.name) + '</b><em>' + esc(r.d.state) + ' · from ' + inr(r.d.budget.low) + ' / day</em></span><span class="pct">' + r.s + '% match</span></button>';
+      }).join('') + '</div><button class="btn btn-sm" id="quizRestart" type="button">RETAKE QUIZ</button>';
+      $('#quizRestart').addEventListener('click', function () { quizState = { i: 0, a: {} }; renderQuiz(); });
+      return;
+    }
+    var q = QUIZ[quizState.i];
+    box.innerHTML = '<div class="q-bar"><i style="width:' + (quizState.i / QUIZ.length * 100) + '%"></i></div><div class="q-step">QUESTION ' + (quizState.i + 1) + ' OF ' + QUIZ.length + '</div><h3 class="q-title">' + q.q + '</h3><div class="q-opts">' +
+      q.opts.map(function (o, idx) { return '<button type="button" class="q-opt" data-idx="' + idx + '"><span>' + o[0] + '</span>' + o[1] + '</button>'; }).join('') + '</div>' +
+      (quizState.i ? '<p style="margin-top:16px"><button class="link-btn" id="quizBack" type="button">← Back</button></p>' : '');
+    var back = $('#quizBack'); if (back) back.addEventListener('click', function () { quizState.i--; renderQuiz(); });
+  }
+  $('#quizBox').addEventListener('click', function (e) {
+    var o = e.target.closest('.q-opt');
+    if (o) { var q = QUIZ[quizState.i]; quizState.a[q.key] = q.opts[+o.getAttribute('data-idx')][2]; quizState.i++; renderQuiz(); return; }
+    var r = e.target.closest('.q-res'); if (r) openModal(r.getAttribute('data-open'));
+  });
+  renderQuiz();
+
+  /* ---------- food ---------- */
+  var dishColors = ['#06b6d4', '#8b5cf6', '#f59e0b', '#ec4899', '#22c55e'];
+  var dishes = [];
+  DATA.forEach(function (d) { d.food.forEach(function (f, i) { dishes.push({ d: d, f: f, c: dishColors[(hash(d.id) + i) % dishColors.length] }); }); });
+  function renderFood() {
+    var q = $('#foodSearch').value.trim().toLowerCase(), r = $('#foodRegion').value;
+    var list = dishes.filter(function (x) { return (r === 'all' || x.d.region === r) && (!q || (x.f.dish + ' ' + x.f.note + ' ' + x.d.name + ' ' + x.d.state).toLowerCase().indexOf(q) >= 0); });
+    $('#foodGrid').innerHTML = list.length ? list.map(function (x) {
+      return '<button type="button" class="dish" style="--dc:' + x.c + '" data-id="' + x.d.id + '"><div class="where">' + esc(x.d.name) + ' · ' + esc(x.d.state) + '</div><h4>' + esc(x.f.dish) + '</h4><p>' + esc(x.f.note) + '</p><div class="dp">' + esc(x.f.price) + '</div></button>';
+    }).join('') : '<div class="empty" style="grid-column:1/-1">No dishes match. Try “fish”, “millet” or “tea”.</div>';
+  }
+  $('#foodSearch').addEventListener('input', renderFood);
+  $('#foodRegion').addEventListener('change', renderFood);
+  $('#foodGrid').addEventListener('click', function (e) { var c = e.target.closest('.dish'); if (c) openModal(c.getAttribute('data-id'), 'food'); });
+
+  /* ---------- community ---------- */
+  var rating = 0, starsBox = $('#starsInput');
+  starsBox.innerHTML = [1, 2, 3, 4, 5].map(function (n) { return '<button type="button" data-n="' + n + '" role="radio" aria-checked="false" aria-label="' + n + ' star' + (n > 1 ? 's' : '') + '">★</button>'; }).join('');
+  function paintStars(n) { $$('button', starsBox).forEach(function (b) { var on = +b.getAttribute('data-n') <= n; b.classList.toggle('on', on); b.setAttribute('aria-checked', +b.getAttribute('data-n') === rating); }); }
+  starsBox.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { rating = +b.getAttribute('data-n'); paintStars(rating); } });
+  starsBox.addEventListener('mouseover', function (e) { var b = e.target.closest('button'); if (b) paintStars(+b.getAttribute('data-n')); });
+  starsBox.addEventListener('mouseleave', function () { paintStars(rating); });
+  $('#placeList').innerHTML = DATA.map(function (d) { return '<option value="' + esc(d.name) + '">'; }).join('');
+  var cats = ['Hidden gem', 'Food', 'Local tip', 'Culture', 'Budget hack', 'Warning'];
+  $('#commFilter').innerHTML += cats.map(function (c) { return '<option>' + c + '</option>'; }).join('');
+  $('#gNote').addEventListener('input', function () { $('#gCount').textContent = this.value.length + ' / 500'; });
+
+  function commItemHTML(s) {
+    var voted = votes[s.id], mine = !s.seed;
+    return '<div class="c-item" data-cid="' + esc(s.id) + '"><div class="c-top"><span>' + esc(s.place) + '</span><span class="tag">' + esc(s.category) + '</span><span class="stars-row" style="color:#fbbf24">' + stars(s.rating || 0) + '</span></div>' +
+      '<h4>' + esc(s.title) + '</h4><p>' + esc(s.note) + '</p><div class="c-foot"><span>by ' + esc(s.author || 'Anonymous') + ' · ' + esc(s.date) + '</span>' +
+      '<button type="button" class="vote' + (voted ? ' on' : '') + '" data-vote="' + esc(s.id) + '" aria-pressed="' + !!voted + '">▲ ' + ((s.votes || 0) + (voted ? 1 : 0)) + '</button>' +
+      (mine ? '<button type="button" class="c-del" data-del="' + esc(s.id) + '">Delete</button>' : '') + '</div></div>';
+  }
+  function renderComm() {
+    var f = $('#commFilter').value, sort = $('#commSort').value;
+    var list = allSubs().filter(function (s) { return f === 'all' || s.category === f; });
+    list.sort(function (a, b) { return sort === 'votes' ? ((b.votes || 0) + (votes[b.id] ? 1 : 0)) - ((a.votes || 0) + (votes[a.id] ? 1 : 0)) : String(b.date).localeCompare(String(a.date)) || b.id.localeCompare(a.id); });
+    $('#commList').innerHTML = list.length ? list.map(commItemHTML).join('') : '<div class="empty">Nothing here yet. Share the first one.</div>';
+    $('#statCommunity').textContent = allSubs().length;
+  }
+  function bindVotes(root) {
+    root.addEventListener('click', function (e) {
+      var v = e.target.closest('[data-vote]');
+      if (v) { var id = v.getAttribute('data-vote'); if (votes[id]) delete votes[id]; else votes[id] = 1; store('votes', votes); renderComm(); if (!modal.hidden && currentTab === 'community') renderTab(); return; }
+      var del = e.target.closest('[data-del]');
+      if (del && confirm('Delete your entry?')) { var did = del.getAttribute('data-del'); userSubs = userSubs.filter(function (s) { return s.id !== did; }); store('subs', userSubs); renderComm(); toast('Entry deleted'); }
+    });
+  }
+  bindVotes($('#commList'));
+  bindVotes($('#mBody'));
+  $('#commFilter').addEventListener('change', renderComm);
+  $('#commSort').addEventListener('change', renderComm);
+  $('#gemForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var place = $('#gPlace').value.trim(), title = $('#gTitle').value.trim(), note = $('#gNote').value.trim(), msg = $('#formMsg');
+    msg.className = 'form-msg';
+    if (!place || !title || note.length < 15) { msg.textContent = 'Please add a place, a title and at least 15 characters of details.'; return; }
+    if (!rating) { msg.textContent = 'Please choose a rating.'; return; }
+    var entry = { id: 'u' + Date.now(), place: place, title: title, note: note, category: $('#gCat').value, rating: rating, author: $('#gName').value.trim() || 'Anonymous', votes: 0, date: new Date().toISOString().slice(0, 10) };
+    userSubs.unshift(entry); store('subs', userSubs);
+    this.reset(); rating = 0; paintStars(0); $('#gCount').textContent = '0 / 500';
+    msg.className = 'form-msg ok'; msg.textContent = 'Thanks! Your tip is live below.';
+    $('#commSort').value = 'new'; renderComm();
+    toast('Tip added to Orbital');
+  });
+  $('#exportBtn').addEventListener('click', function () {
+    var blob = new Blob([JSON.stringify(allSubs(), null, 2)], { type: 'application/json' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'orbital-community.json';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  /* ---------- global search (Ctrl/Cmd+K or "/") ---------- */
+  var overlay = $('#searchOverlay'), gInput = $('#gSearch'), gResults = $('#gResults'), searchFocus = null;
+  function openSearch() { searchFocus = document.activeElement; overlay.hidden = false; document.body.classList.add('no-scroll'); gInput.value = ''; renderSearch(); gInput.focus(); }
+  function closeSearch() { overlay.hidden = true; if (modal.hidden) document.body.classList.remove('no-scroll'); if (searchFocus && searchFocus.focus) searchFocus.focus(); }
+  function renderSearch() {
+    var q = gInput.value.trim().toLowerCase(), out = [];
+    DATA.forEach(function (d) {
+      if (!q || searchText(d).indexOf(q) >= 0) {
+        var why = '';
+        if (q) {
+          d.food.forEach(function (f) { if (!why && f.dish.toLowerCase().indexOf(q) >= 0) why = '🍽 ' + f.dish; });
+          d.gems.forEach(function (g) { if (!why && g.name.toLowerCase().indexOf(q) >= 0) why = '💎 ' + g.name; });
+        }
+        out.push({ d: d, why: why || d.tagline });
+      }
+    });
+    gResults.innerHTML = out.length ? out.slice(0, 12).map(function (r) {
+      return '<button type="button" class="g-res" data-open="' + r.d.id + '"><span class="thumb">' + art(r.d, 's') + '</span><span><b>' + esc(r.d.name) + '</b><small>' + esc(r.d.state) + ' · ' + esc(r.why) + '</small></span></button>';
+    }).join('') : '<div class="hint">No matches. Try a place, state or dish.</div>';
+  }
+  $('#searchBtn').addEventListener('click', openSearch);
+  gInput.addEventListener('input', renderSearch);
+  gInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var f = $('.g-res', gResults); if (f) f.click(); } });
+  gResults.addEventListener('click', function (e) { var b = e.target.closest('.g-res'); if (b) { var id = b.getAttribute('data-open'); closeSearch(); openModal(id); } });
+  overlay.addEventListener('click', function (e) { if (e.target.hasAttribute('data-close-search')) closeSearch(); });
+  document.addEventListener('keydown', function (e) {
+    var typing = /INPUT|TEXTAREA|SELECT/.test((document.activeElement || {}).tagName || '');
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); overlay.hidden ? openSearch() : closeSearch(); }
+    else if (e.key === '/' && !typing && overlay.hidden && modal.hidden) { e.preventDefault(); openSearch(); }
+    else if (e.key === 'Escape') { if (!overlay.hidden) closeSearch(); else if (!modal.hidden) closeModal(); else if (mobileMenu.classList.contains('open')) toggle.click(); }
+    else if (e.key === 'Tab' && !modal.hidden) { /* keep focus inside modal */
+      var f = $$('button, a[href], input, select, textarea', modal).filter(function (x) { return x.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- surprise me ---------- */
+  function surprise() { var d = DATA[Math.floor(Math.random() * DATA.length)]; toast('🎲 ' + d.name + ' — ' + d.tagline); openModal(d.id); }
+  $('#surpriseBtn').addEventListener('click', surprise);
+  $('#surprise2').addEventListener('click', surprise);
+
+  /* ---------- init ---------- */
+  $('#year').textContent = new Date().getFullYear();
+  updateStats(); renderCards(); renderFood(); renderComm(); syncSaved();
+  var m = location.hash.match(/^#p\/([\w-]+)/);
+  if (m && byId(m[1])) openModal(m[1]);
+
+})();
+
+</script>
+</body>
+</html>
